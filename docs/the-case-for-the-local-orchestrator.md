@@ -226,4 +226,4 @@ It is not a claim that local models don’t reason. They do. The architecture’
 
 It is not complete. The L2 reconciliation layer, temporal decay for WAL trust levels, and device-specific signal chain failure modes are specified but not yet implemented. V1 is the foundation. The architecture is designed to grow without requiring the foundation to be rebuilt.
 
-*v5.1 | Post-Adversarial Edition | March 2026 | Validated across DOT, Mayo Clinic CAOF, SMB Framework, DRNT, and L2 Specification adversarial review. Core principle reframed based on convergent four-model findings. Evaluation scaling principle and DRNT Lightweight Evaluation Loop addendum added in v5.1.*
+*v5.1 | Post-Adversarial Edition | March 2026 | Validated across Federal, Medical CAOF, SMB Framework, DRNT, and L2 Specification adversarial review. Core principle reframed based on convergent four-model findings. Evaluation scaling principle and DRNT Lightweight Evaluation Loop addendum added in v5.1.*
