@@ -180,7 +180,7 @@ This is the correct sequencing: single-endpoint reliability first, reconciliatio
 
 # 7. Validation Methodology
 
-This architecture has been stress-tested through multi-model adversarial review across five implementation domains: a federal agency proposal (DOT), a clinical environment submission (Mayo Clinic CAOF), a six-document SMB framework, a personal-scale gateway (DRNT), and the L2 Discrepancy Engine Specification itself.
+This architecture has been stress-tested through multi-model adversarial review across five implementation domains: a federal agency proposal, a clinical environment submission, a six-document SMB framework, a personal-scale gateway (DRNT), and the L2 Discrepancy Engine Specification itself.
 
 Adversarial reviews were conducted independently by Claude (Anthropic), Gemini (Google), ChatGPT (OpenAI), and Copilot (Microsoft). Findings from each review were incorporated into successive document versions, with a cross-domain reconciliation pass tracing every structural concern across all implementations to distinguish documentation debt from genuine architectural gaps.
 
