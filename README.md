@@ -69,4 +69,4 @@ It is not complete. The L2 reconciliation layer, temporal decay for WAL trust le
 
 Lawrence Jeffords — Nahunta, Georgia
 
-Architecture developed and validated March 2026 through multi-model adversarial review across DOT, Mayo Clinic CAOF, SMB Framework, DRNT, and L2 Specification domains.
+Architecture developed and validated March 2026 through multi-model adversarial review across Federal, Medical CAOF, SMB Framework, DRNT, and L2 Specification domains.
