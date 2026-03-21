@@ -1,0 +1,44 @@
+# Domain Applications
+
+The [Local-First AI Orchestration](../README.md) reference architecture was designed as a general pattern — route, don't reason — applicable across any environment where AI must operate under privacy constraints, compliance requirements, and human oversight obligations.
+
+This directory contains domain-specific applications of that architecture, each developed independently and stress-tested through multi-model adversarial review (Claude, GPT-4, Gemini). The domains were selected because they represent fundamentally different operating environments with distinct compliance frameworks, risk profiles, and organizational structures — yet all share the same core architectural need: a governed AI layer that routes to the right intelligence while keeping sensitive data under institutional control.
+
+## Domains
+
+| Domain | Environment Class | Key Compliance Drivers | Primary Documents |
+|--------|------------------|----------------------|-------------------|
+| [Federal Regulatory](federal-regulatory/) | Large federal agency with field personnel, mission-critical safety systems, and multi-division structure | FedRAMP, FISMA, NIST 800-53, Zero Trust (M-22-09), AI Governance (M-24-10), CUI (32 CFR 2002) | Unified architecture, executive briefing, departmental orchestrator case |
+| [Clinical](clinical/) | Major academic medical center with multi-specialty care, EHR integration, and patient safety requirements | HIPAA, FDA CDS guidance, NIST AI RMF, institutional IRB/governance | Engineering review, adversarial appendix |
+| [K-12 Education](k12-education/) | Rural school district with Title I demographics, limited IT staff, and student data protection obligations | FERPA, COPPA, state student data privacy law, IDEA | Implementation analysis, feasibility assessment, landscape research |
+| [SMB](smb/) | Small and mid-sized businesses with no dedicated IT staff, operating in potentially regulated industries | HIPAA (healthcare), attorney-client privilege (legal), GLBA (financial), general data privacy | Six-document framework series |
+
+## What These Documents Are
+
+Each domain application takes the reference architecture's core components — the three-tier task classification, the Context Packager, the Workflow Autonomy Levels (WAL 0–3), the append-only audit log, and multi-model routing — and maps them onto the specific systems, regulations, workflows, and organizational realities of that environment.
+
+The documents were built entirely from public information, published regulations, and general domain knowledge. **They do not represent the position of any specific organization.** Where a domain application describes a federal agency environment, a clinical environment, or a school district environment, it describes the *class* of environment — not a particular institution.
+
+## What These Documents Are Not
+
+- **Not institutional proposals.** No organization has endorsed, commissioned, or reviewed these documents.
+- **Not implementation specifications.** They are architectural frameworks that would require significant institutional engineering to deploy.
+- **Not vendor recommendations.** The architecture is model-agnostic by design. Specific open-source tools are named as implementation examples, not endorsements.
+
+## Adversarial Review Methodology
+
+Every domain application was subjected to multi-model adversarial review — independent critique from Claude (Anthropic), GPT-4 (OpenAI), and Gemini (Google), with each review's findings incorporated into subsequent versions. The adversarial review methodology is documented separately in the [Lightweight Evaluation Loop](../DRNT_Lightweight_Evaluation_Loop_v2.md).
+
+This process is not a substitute for institutional peer review, red-team assessment, or authority-to-operate evaluation. It is a pre-submission quality gate that surfaces structural weaknesses, regulatory gaps, and overclaims before domain experts invest time in evaluation.
+
+## Cross-Domain Validation
+
+The strongest evidence for the architecture's generality is that the same pattern — route, don't reason — maps cleanly onto environments as different as federal safety inspection, clinical care coordination, K-12 student data protection, and small business operations. The compliance frameworks differ. The risk profiles differ. The organizational structures differ. The architectural response is structurally identical:
+
+1. A local model classifies and routes — it does not try to answer complex questions.
+2. Sensitive data is stripped before it leaves the local environment — structurally, not by policy.
+3. Cloud frontier models handle complex reasoning — receiving only curated, minimized context.
+4. Every interaction is logged immutably — enabling audit, accountability, and earned trust.
+5. Autonomy is graduated — all capabilities start at WAL-0 (recommend only) and promote through demonstrated reliability.
+
+The domain applications demonstrate that this is not a pattern that works in one context. It is a pattern that works wherever the problem is the same: AI must be useful, but data must stay governed.
