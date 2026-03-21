@@ -1,4 +1,5 @@
 
+[README.md](https://github.com/user-attachments/files/26159009/README.md)
 # The Case for the Local Orchestrator
 
 **A Reference Architecture for Local-First AI Agent Orchestration**
@@ -66,6 +67,6 @@ It is not complete. The L2 reconciliation layer, temporal decay for WAL trust le
 
 ## Author
 
-Jacob Jeffords — Nahunta, Georgia
+Lawrence Jeffords — Nahunta, Georgia
 
 Architecture developed and validated March 2026 through multi-model adversarial review across DOT, Mayo Clinic CAOF, SMB Framework, DRNT, and L2 Specification domains.
