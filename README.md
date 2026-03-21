@@ -61,6 +61,17 @@ It is not a claim that local models don't reason. They do. The architecture defi
 
 It is not complete. The L2 reconciliation layer, temporal decay for WAL trust levels, and device-specific signal chain failure modes are specified but not yet implemented. V1 is the foundation.
 
+## Domain Applications
+
+The `domain-applications/` directory contains scrubbed case studies applying this architecture across four sectors:
+
+- **Federal Regulatory** — unified architecture, executive briefing, and departmental orchestrator case for a large federal agency operating under FedRAMP, FISMA, and Zero Trust mandates
+- **Clinical** — engineering review, adversarial appendix, and patient narrative for AI orchestration in a clinical environment with HIPAA and FDA CDS constraints
+- **K-12 Education** — feasibility analysis, implementation report, and landscape research for district-level sovereign AI deployment
+- **SMB** — six-document framework covering business readiness, reference architecture, vendor evaluation, regulated-industry supplement, and operations governance
+
+Each domain was developed independently and stress-tested through multi-model adversarial review. See [`domain-applications/README.md`](domain-applications/README.md) for the full overview.
+
 ## License
 
 [MIT](LICENSE)
