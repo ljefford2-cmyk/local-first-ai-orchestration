@@ -81,7 +81,7 @@ The two-stream audit log design (metadata stream + encrypted content stream) was
 | v5.0 | Metadata inference risk acknowledged in audit log design | Adversarial review of two-stream architecture |
 | v5.0 | Storage lifecycle constraints for append-only logs addressed | Adversarial review of operational feasibility |
 | v5.0 | Genre clarification added (reference architecture, not academic paper) | Reviewers applying academic validation expectations |
-| v5.1 | Evaluation scaling principle added (Section 7.3) | Cross-domain reconciliation of DOT vs. DRNT evaluation needs |
+| v5.1 | Evaluation scaling principle added (Section 7.3) | Cross-domain reconciliation of Federal vs. DRNT evaluation needs |
 | v5.1 | DRNT Lightweight Evaluation Loop referenced as personal-scale addendum | Same cross-domain reconciliation |
 | v5.1.1 | Evaluation Loop characterized as analogous in purpose, not functionally equivalent, to formal harness | Precision correction on diagnostic capability claims |
 
