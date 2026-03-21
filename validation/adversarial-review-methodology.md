@@ -18,8 +18,8 @@ The local orchestrator architecture was subjected to structured adversarial revi
 
 ### Domains Reviewed
 
-1. **DOT Federal Proposal** — Regulatory enforcement environment with safety-critical consequences and high task repetition.
-2. **Mayo Clinic CAOF** — Clinical environment with HIPAA constraints, patient safety stakes, and institutional review requirements.
+1. **Federal Proposal** — Regulatory enforcement environment with safety-critical consequences and high task repetition.
+2. **Medical Field CAOF** — Clinical environment with HIPAA constraints, patient safety stakes, and institutional review requirements.
 3. **SMB Framework** — Six-document series for small business adoption with limited IT resources.
 4. **DRNT Personal Gateway** — Personal-scale deployment with high question diversity, low repetition, and a single non-technical user.
 5. **L2 Discrepancy Engine Specification** — The multi-model reconciliation layer itself, reviewed as a standalone technical specification.
