@@ -1,10 +1,9 @@
 
-[README.md](https://github.com/user-attachments/files/26163484/README.md)
 # DRNT — Personal AI Gateway
 
 **Don't Reason, Navigate & Task**
 
-DRNT is a personal-scale implementation of the [route-don't-reason architecture](../../README.md). It is a wrist-and-pocket AI gateway — a three-device system that routes requests to the right intelligence and returns results for human decision-making.
+DRNT is a personal-scale implementation of the [local-first AI orchestration architecture](../../README.md). It is a wrist-and-pocket AI gateway — a three-device system that routes requests to the right intelligence and returns results for human decision-making.
 
 The mental model is the Pip-Boy from the Fallout video game: the interface to everything, not the intelligence itself.
 
@@ -57,4 +56,6 @@ These specs define the interface contracts between DRNT components. They are dep
 
 ## Relationship to the Reference Architecture
 
-DRNT is one of several domain applications of the route-don't-reason pattern documented in this repository. The same foundational architecture has been applied at federal, clinical, SMB, and education scales. DRNT is the personal instance — built for one person, on hardware he owns, solving problems he encounters every day.
+DRNT is one of several domain applications of the local-first AI orchestration architecture documented in this repository. The same foundational pattern has been applied at federal regulatory, clinical, SMB, and K-12 education scales — each driven by external compliance frameworks like FedRAMP, HIPAA, FERPA, or GLBA.
+
+DRNT is different. It operates under no external compliance mandate. No regulator requires the Context Packager, the audit log, or the WAL progression. They exist here because a single user chose to govern his own AI interactions with the same structural discipline an institution would — and found that the components remain valuable without a regulatory driver. DRNT demonstrates that the architecture addresses a real problem at every scale, not just a regulatory one.
