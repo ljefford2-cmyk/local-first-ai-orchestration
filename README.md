@@ -72,6 +72,8 @@ The `domain-applications/` directory contains scrubbed case studies applying thi
 
 Each domain was developed independently and stress-tested through multi-model adversarial review. See [`domain-applications/README.md`](domain-applications/README.md) for the full overview.
 
+ - **Personal** — five interface specifications for DRNT, a personal AI gateway implementing the full route-don't-reason architecture with append-only audit, graduated trust, and structural privacy enforcement
+
 ## License
 
 [MIT](LICENSE)
