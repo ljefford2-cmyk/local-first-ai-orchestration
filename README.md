@@ -69,7 +69,7 @@ The `domain-applications/` directory contains scrubbed case studies applying thi
 - **Clinical** — engineering review, adversarial appendix, and patient narrative for AI orchestration in a clinical environment with HIPAA and FDA CDS constraints
 - **K-12 Education** — feasibility analysis, implementation report, and landscape research for district-level sovereign AI deployment
 - **SMB** — six-document framework covering business readiness, reference architecture, vendor evaluation, regulated-industry supplement, and operations governance
-- **Personal** — five interface specifications for DRNT, a personal AI gateway implementing the full route-don't-reason architecture with append-only audit, graduated trust, and structural privacy enforcement
+- **Personal** — five interface specifications for DRNT, a personal AI gateway implementing the full route-don't-reason architecture with append-only audit, graduated trust, and structural privacy enforcement. See `drnt/README.md` for the full specification index.
   
 Each domain was developed independently and stress-tested through multi-model adversarial review. See [`domain-applications/README.md`](domain-applications/README.md) for the full overview.
 
