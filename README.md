@@ -1,5 +1,4 @@
 
-[README.md](https://github.com/user-attachments/files/26159009/README.md)
 # The Case for the Local Orchestrator
 
 **A Reference Architecture for Local-First AI Agent Orchestration**
@@ -12,7 +11,7 @@ v5.1.1 — Post-Adversarial Edition — March 2026
 
 A design pattern for placing a local AI model between users and cloud frontier models. The local model holds personal context, preferences, and memory. It decides what stays local, what goes to the cloud, and how to package what goes. Cloud models handle complex reasoning. The user retains decision authority.
 
-This is a reference architecture — technology-stack-agnostic, domain-agnostic, and not a product. It has been applied and validated across federal regulatory (DOT), clinical (Mayo Clinic), small business, K-12 education, and personal-scale (DRNT) deployments.
+This is a reference architecture — technology-stack-agnostic, domain-agnostic, and not a product. It has been applied and validated across federal regulatory, clinical, small business, K-12 education, and personal-scale deployments.
 
 ## Core Principle
 
@@ -63,14 +62,14 @@ It is not complete. The L2 reconciliation layer, temporal decay for WAL trust le
 
 ## Domain Applications
 
-The `domain-applications/` directory contains scrubbed case studies applying this architecture across four sectors:
+The `domain-applications/` directory contains independent architectural frameworks applying this pattern across five sectors. Each was built from public information, published regulations, and general domain knowledge — they do not represent the position of any specific organization.
 
-- **Federal Regulatory** — unified architecture, executive briefing, and departmental orchestrator case for a large federal agency operating under FedRAMP, FISMA, and Zero Trust mandates
+- **Federal Regulatory** — unified architecture, executive briefing, and departmental orchestrator case for a large federal agency environment operating under FedRAMP, FISMA, and Zero Trust mandates
 - **Clinical** — engineering review, adversarial appendix, and patient narrative for AI orchestration in a clinical environment with HIPAA and FDA CDS constraints
 - **K-12 Education** — feasibility analysis, implementation report, and landscape research for district-level sovereign AI deployment
 - **SMB** — six-document framework covering business readiness, reference architecture, vendor evaluation, regulated-industry supplement, and operations governance
-- **Personal** — five interface specifications for DRNT, a personal AI gateway implementing the full route-don't-reason architecture with append-only audit, graduated trust, and structural privacy enforcement. 
-  
+- **Personal (DRNT)** — five interface specifications for DRNT, a personal AI gateway implementing the full architecture with append-only audit, graduated trust, and structural privacy enforcement. DRNT operates under no external compliance mandate — its inclusion demonstrates that the governance components remain valuable as self-imposed discipline, not only as regulatory response.
+
 Each domain was developed independently and stress-tested through multi-model adversarial review. See [`domain-applications/README.md`](domain-applications/README.md) for the full overview.
 
 ## License
@@ -81,4 +80,4 @@ Each domain was developed independently and stress-tested through multi-model ad
 
 Lawrence Jeffords — Nahunta, Georgia
 
-Architecture developed and validated March 2026 through multi-model adversarial review across Federal, Medical CAOF, SMB Framework, DRNT, and L2 Specification domains.
+Architecture developed and validated March 2026 through multi-model adversarial review across federal regulatory, clinical, SMB framework, K-12 education, and personal-scale (DRNT) domains.
