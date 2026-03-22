@@ -9,7 +9,7 @@
 
 # 1. Design Rationale
 
-The DOT Departmental Orchestrator uses a formal evaluation harness with golden task suites of 50–200 curated test cases per workflow category, SSDF-governed template management, and structured override analytics reported to supervisors. That level of instrumentation is justified by the DOT environment: inspectors run variations of the same task types thousands of times per day, errors propagate into safety-critical enforcement actions, and regulatory interpretation must reflect the organization’s position rather than prevailing opinion.
+The Federal-Regulatory Orchestrator uses a formal evaluation harness with golden task suites of 50–200 curated test cases per workflow category, SSDF-governed template management, and structured override analytics reported to supervisors. That level of instrumentation is justified by the DOT environment: inspectors run variations of the same task types thousands of times per day, errors propagate into safety-critical enforcement actions, and regulatory interpretation must reflect the organization’s position rather than prevailing opinion.
 
 DRNT operates under a fundamentally different consequence and repetition profile. Most errors are recoverable because the human is the immediate consumer of every result. Question diversity is high and repetition is low—the same question rarely appears twice in the same form. Users are not IT specialists and will not tolerate evaluation workflows that feel like work. These constraints rule out formal task suites and structured evaluation forms, but they do not eliminate the need for quality feedback. Without a feedback loop, the system cannot improve its routing decisions, context selection, or prompt packaging over time.
 
