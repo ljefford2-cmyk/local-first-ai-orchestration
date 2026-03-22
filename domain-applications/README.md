@@ -4,6 +4,8 @@ The [Local-First AI Orchestration](../README.md) reference architecture was desi
 
 This directory contains domain-specific applications of that architecture, each developed independently and stress-tested through multi-model adversarial review (Claude, GPT-4, Gemini). The domains were selected because they represent fundamentally different operating environments with distinct compliance frameworks, risk profiles, and organizational structures — yet all share the same core architectural need: a governed AI layer that routes to the right intelligence while keeping sensitive data under institutional control.
 
+One domain — DRNT — intentionally operates outside any external compliance mandate. It is included to demonstrate that the architecture's governance components are not overhead imposed by regulation. They solve a structural problem that exists whether or not a regulator requires them.
+
 ## Domains
 
 | Domain | Environment Class | Key Compliance Drivers | Primary Documents |
@@ -12,6 +14,7 @@ This directory contains domain-specific applications of that architecture, each 
 | [Clinical](clinical/) | Major academic medical center with multi-specialty care, EHR integration, and patient safety requirements | HIPAA, FDA CDS guidance, NIST AI RMF, institutional IRB/governance | Engineering review, adversarial appendix |
 | [K-12 Education](k12-education/) | Rural school district with Title I demographics, limited IT staff, and student data protection obligations | FERPA, COPPA, state student data privacy law, IDEA | Implementation analysis, feasibility assessment, landscape research |
 | [SMB](smb/) | Small and mid-sized businesses with no dedicated IT staff, operating in potentially regulated industries | HIPAA (healthcare), attorney-client privilege (legal), GLBA (financial), general data privacy | Six-document framework series |
+| [DRNT](drnt/) | Personal AI gateway on a three-device ecosystem (Watch, Phone, Desktop) with local-first orchestration and self-imposed governance | Self-imposed: privacy by architecture (Context Packager), append-only audit log, graduated autonomy (WAL 0–3) — no external regulatory mandate | Project description, adversarial reviews, specification documents |
 
 ## What These Documents Are
 
@@ -40,5 +43,7 @@ The strongest evidence for the architecture's generality is that the same patter
 3. Cloud frontier models handle complex reasoning — receiving only curated, minimized context.
 4. Every interaction is logged immutably — enabling audit, accountability, and earned trust.
 5. Autonomy is graduated — all capabilities start at WAL-0 (recommend only) and promote through demonstrated reliability.
+
+DRNT extends this validation in a specific way: it removes the external compliance driver entirely. The four institutional domains demonstrate that the architecture meets regulatory requirements across different frameworks. DRNT demonstrates that the governance components — the Context Packager, the audit log, the WAL progression — remain structurally valuable even when no regulation demands them. A single user choosing to govern their own AI interactions the same way an institution would is not compliance theater. It is evidence that the architecture addresses a real problem at every scale, not just a regulatory one.
 
 The domain applications demonstrate that this is not a pattern that works in one context. It is a pattern that works wherever the problem is the same: AI must be useful, but data must stay governed.
