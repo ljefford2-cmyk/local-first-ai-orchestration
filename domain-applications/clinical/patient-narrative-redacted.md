@@ -68,7 +68,7 @@ The 12-lead EKG performed in the Emergency Department included an automated comp
 
 > *"When compared with ECG of 18-May-2012 11:35, Atrial flutter has replaced Sinus rhythm"*
 
-The system selected an ECG from May 2012 — a tracing recorded nearly **fourteen years earlier**, before either of my two cardiac ablation procedures in 2023 — as the comparison baseline for an acute cardiac presentation in 2026.
+The system selected an ECG from May 2012 — a tracing recorded nearly **fourteen years earlier**, before either of my two cardiac ablation procedures in 2013 — as the comparison baseline for an acute cardiac presentation in 2026.
 
 The November 2024 cardiopulmonary exercise test — performed at the same institution, containing a formal baseline ECG, documented PVCs, resting heart rate, and complete pulmonary function data, all directly relevant to the presenting complaint — **was not surfaced during the acute presentation.**
 
