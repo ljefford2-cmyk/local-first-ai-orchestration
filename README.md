@@ -38,7 +38,8 @@ The boundary is not between reasoning and not-reasoning. It is between reasoning
 |---|---|
 | [The Case for the Local Orchestrator](docs/the-case-for-the-local-orchestrator.md) | Full reference architecture. Core principle, Context Packager, WAL governance, audit log, multi-model dispatch, validation methodology. |
 | [Lightweight Evaluation Loop](docs/addenda/lightweight-evaluation-loop.md) | Addendum. Personal-scale quality feedback — how deployments with high question diversity and low repetition capture improvement signals without formal test suites. |
-| [Adversarial Review Methodology](validation/adversarial-review-methodology.md) | Summary of the multi-model review process, key findings, and what changed as a result. |
+| [Adversarial Review Methodology](validation/adversarial-review-methodology.md) | Summary of the multi-model review process, key findings, and what changed as a result. 
+| [WAL Integration Profile for NVIDIA OpenShell](WAL_Integration_Profile_OpenShell_v3.pdf) | Maps WAL 0-3 to OpenShell policy infrastructure with durable state, escalation evaluator, model-change taxonomy, and shadow evaluation. v3, March 2026. ||
 
 ## Validation
 
