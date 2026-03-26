@@ -1,9 +1,8 @@
-
 # The Case for the Local Orchestrator
 
 **A Reference Architecture for Local-First AI Agent Orchestration**
 
-v5.1.1 — Post-Adversarial Edition — March 2026
+v5.2 — Post-Adversarial Edition — March 2026
 
 ---
 
@@ -26,26 +25,28 @@ The boundary is not between reasoning and not-reasoning. It is between reasoning
 ## Key Components
 
 | Component | Purpose |
-|---|---|
-| **Context Packager** | Structural privacy gate and prompt engineer. All outbound data passes through it. Sensitive data is stripped by rule, not by judgment. Default is deny. |
-| **Workflow Autonomy Levels (WAL 0–3)** | Graduated trust. Every capability starts at WAL-0 (recommend only). Promotion requires demonstrated reliability. Anomalies trigger automatic demotion. |
-| **Append-Only Audit Log** | Every routing decision, packaging decision, model response, and human decision is logged in a cryptographically chained journal. Non-optional. |
+| --- | --- |
+| **Context Packager** | Structural privacy gate and prompt engineer. All outbound data passes through it. Sensitive data is stripped by rule, not by judgment. Default is deny. Includes adversarial input handling to enforce hard separation between instructions and data in every outbound payload. |
+| **Execution Safety Layer** | Governs what happens when a decision becomes an action. Network isolation at the container topology level, tool sandboxing with constrained permissions, connector trust levels (read-only / write-guarded / privileged), and WAL-gated execution. Added in v5.2. |
+| **Workflow Autonomy Levels (WAL 0–3)** | Graduated trust. Every capability starts at WAL-0 (recommend only). Promotion requires demonstrated reliability. Anomalies trigger automatic demotion. Trust scores incorporate temporal decay, recency weighting, and failure-type weighting (routing errors carry less weight than policy violations). |
+| **Append-Only Audit Log** | Every routing decision, packaging decision, model response, and human decision is logged in a cryptographically chained journal. Non-optional. Source for all implementation metrics (local resolution rate, context reduction ratio, override frequency, retry rate, trust demotion frequency). |
 | **Multi-Model Dispatch** | Route different task types to different cloud models based on measured strengths. V1 is single-endpoint; multi-model dispatch depends on the reconciliation layer. |
 
 ## Documents
 
 | Document | Description |
-|---|---|
-| [The Case for the Local Orchestrator](docs/the-case-for-the-local-orchestrator.md) | Full reference architecture. Core principle, Context Packager, WAL governance, audit log, multi-model dispatch, validation methodology. |
+| --- | --- |
+| [The Case for the Local Orchestrator](docs/the-case-for-the-local-orchestrator.md) | Full reference architecture. Core principle, Context Packager, Execution Safety Layer, WAL governance, audit log, multi-model dispatch, failure domain classification, implementation metrics, validation methodology. |
 | [Lightweight Evaluation Loop](docs/addenda/lightweight-evaluation-loop.md) | Addendum. Personal-scale quality feedback — how deployments with high question diversity and low repetition capture improvement signals without formal test suites. |
-| [Adversarial Review Methodology](validation/adversarial-review-methodology.md) | Summary of the multi-model review process, key findings, and what changed as a result. 
-| [WAL Integration Profile for NVIDIA OpenShell](WAL_Integration_Profile_OpenShell_v3.pdf) | Maps WAL 0-3 to OpenShell policy infrastructure with durable state, escalation evaluator, model-change taxonomy, and shadow evaluation. v3, March 2026. ||
+| [Adversarial Review Methodology](validation/adversarial-review-methodology.md) | Summary of the multi-model review process, key findings, and what changed as a result. |
 
 ## Validation
 
 The architecture has been stress-tested through structured adversarial review by four independent AI models — Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google), and Copilot (Microsoft) — across five implementation domains. Reviews were conducted independently with identical prompts and no cross-contamination. Findings were reconciled across all reviews, and convergent criticisms drove structural revisions to the architecture.
 
 The most significant finding: all four reviewers independently identified that the original core principle ("route, don't reason") created a structural tension with what the architecture actually does. This convergent criticism drove the v5.0 reframe to the current principle, replacing a binary framing with a spectrum based on error recoverability.
+
+v5.2 was driven by a structured redline review that identified the absence of execution governance as the architecture's most significant remaining gap. The Execution Safety Layer, adversarial input handling, failure domain classification, WAL temporal dynamics, implementation metrics roadmap, and terminology table were added in response.
 
 See [Adversarial Review Methodology](validation/adversarial-review-methodology.md) for details.
 
@@ -65,11 +66,11 @@ It is not complete. The L2 reconciliation layer, temporal decay for WAL trust le
 
 The `domain-applications/` directory contains independent architectural frameworks applying this pattern across five sectors. Each was built from public information, published regulations, and general domain knowledge — they do not represent the position of any specific organization.
 
-- **Federal Regulatory** — unified architecture, executive briefing, and departmental orchestrator case for a large federal agency environment operating under FedRAMP, FISMA, and Zero Trust mandates
-- **Clinical** — engineering review, adversarial appendix, and patient narrative for AI orchestration in a clinical environment with HIPAA and FDA CDS constraints
-- **K-12 Education** — feasibility analysis, implementation report, and landscape research for district-level sovereign AI deployment
-- **SMB** — six-document framework covering business readiness, reference architecture, vendor evaluation, regulated-industry supplement, and operations governance
-- **Personal (DRNT)** — five interface specifications for DRNT, a personal AI gateway implementing the full architecture with append-only audit, graduated trust, and structural privacy enforcement. DRNT operates under no external compliance mandate — its inclusion demonstrates that the governance components remain valuable as self-imposed discipline, not only as regulatory response.
+* **Federal Regulatory** — unified architecture, executive briefing, and departmental orchestrator case for a large federal agency environment operating under FedRAMP, FISMA, and Zero Trust mandates
+* **Clinical** — engineering review, adversarial appendix, and patient narrative for AI orchestration in a clinical environment with HIPAA and FDA CDS constraints
+* **K-12 Education** — feasibility analysis, implementation report, and landscape research for district-level sovereign AI deployment
+* **SMB** — six-document framework covering business readiness, reference architecture, vendor evaluation, regulated-industry supplement, and operations governance
+* **Personal (DRNT)** — five interface specifications for DRNT, a personal AI gateway implementing the full architecture with append-only audit, graduated trust, and structural privacy enforcement. DRNT operates under no external compliance mandate — its inclusion demonstrates that the governance components remain valuable as self-imposed discipline, not only as regulatory response.
 
 Each domain was developed independently and stress-tested through multi-model adversarial review. See [`domain-applications/README.md`](domain-applications/README.md) for the full overview.
 
