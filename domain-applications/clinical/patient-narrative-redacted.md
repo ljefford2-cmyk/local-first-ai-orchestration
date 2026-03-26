@@ -100,13 +100,13 @@ The gap between what the institution knows and what the treating physician can s
 
 The accompanying technical document — *Clinical AI Orchestration Framework: Engineering Review & Integration Assessment* — provides the detailed architectural specification. This section summarizes the core idea for clinical leadership.
 
-### 6.1 The Core Principle: Route, Don't Reason
+### 6.1 The Core Principle: Bounded Local Reasoning
 
 The proposed framework does not ask AI to practice medicine. It does not generate diagnoses, recommend treatments, or replace clinical judgment.
 
 It does one thing: it makes the data that already exists in the institutional record available to the clinician who needs it, at the time they need it, assembled in a way that supports their reasoning rather than replacing it.
 
-The architecture is built on a principle called **route, don't reason**. The AI component functions as an intelligent routing and retrieval layer — classifying what the clinician needs, finding it in the systems of record, and presenting it with full traceability to its source. The physician reasons. The physician decides. The AI ensures those decisions are not made blind to data the institution has already collected.
+The architecture is built on a principle called **bounded local reasoning** — the local model reasons about retrieval and packaging; cloud models handle everything else. The AI component functions as an intelligent routing and retrieval layer — classifying what the clinician needs, finding it in the systems of record, and presenting it with full traceability to its source. The physician reasons. The physician decides. The AI ensures those decisions are not made blind to data the institution has already collected.
 
 ### 6.2 What It Would Have Changed in My Case
 
