@@ -48,7 +48,7 @@ Current EHR platforms provide robust transactional record-keeping but limited cr
 
 The proposals correctly identify that this is an orchestration problem, not an intelligence problem. The data already exists within the system. What is missing is a governed layer that can assemble, curate, and present that data in a clinically useful format without introducing hallucination risk or compromising patient privacy.
 
-# 3. Architectural Thesis: Route, Don't Reason
+# 3. Architectural Thesis: Bounded Local Reasoning
 
 ## 3.1 Why This Principle Is Foundational for Healthcare
 
