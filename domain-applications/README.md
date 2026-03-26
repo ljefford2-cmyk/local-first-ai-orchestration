@@ -14,7 +14,7 @@ One domain — DRNT — intentionally operates outside any external compliance m
 | [Clinical](clinical/) | Major academic medical center with multi-specialty care, EHR integration, and patient safety requirements | HIPAA, FDA CDS guidance, NIST AI RMF, institutional IRB/governance | Engineering review, adversarial appendix |
 | [K-12 Education](k12-education/) | Rural school district with Title I demographics, limited IT staff, and student data protection obligations | FERPA, COPPA, state student data privacy law, IDEA | Implementation analysis, feasibility assessment, landscape research |
 | [SMB](smb/) | Small and mid-sized businesses with no dedicated IT staff, operating in potentially regulated industries | HIPAA (healthcare), attorney-client privilege (legal), GLBA (financial), general data privacy | Six-document framework series |
-| [DRNT](drnt/) | Personal AI gateway on a three-device ecosystem (Watch, Phone, Desktop) with local-first orchestration and self-imposed governance | Self-imposed: privacy by architecture (Context Packager), append-only audit log, graduated autonomy (WAL 0–3) — no external regulatory mandate | Project description, adversarial reviews, specification documents |
+| [DRNT](personal-drnt/) | Personal AI gateway on a three-device ecosystem (Watch, Phone, Desktop) with local-first orchestration and self-imposed governance | Self-imposed: privacy by architecture (Context Packager), append-only audit log, graduated autonomy (WAL 0–3) — no external regulatory mandate | Project description, adversarial reviews, specification documents |
 
 ## What These Documents Are
 
