@@ -926,5 +926,4 @@ Component → Unix socket → Log Writer → dedup → assign event_id + committ
 Watch/phone events transmit over Tailscale. If offline, events queue on-device and flush on reconnection. `source_event_id` and `timestamp` are set on-device; `committed_at` is set by the log writer. The gap between `timestamp` and `committed_at` is the offline queue duration.
 
 ---
-
-*End of DRNT Canonical Event Schema v2.0. Companion artifacts: Capability Trust Profile (next), NemoClaw-Governance-Overlay (final).*
+*End of DRNT Canonical Event Schema v2.0. Companion artifacts: [Capability Trust Profile](DRNT_Capability_Trust_Profile.md) (next), [NemoClaw-Governance-Overlay](DRNT_NemoClaw_Governance_Overlay.md) (final).*
