@@ -1,200 +1,30 @@
-# Creating the Local Orchestrator GitHub Repository
-
-## Step-by-step walkthrough — GitHub website method
-
-**What you need before starting:**
-
-- A GitHub account (github.com — free tier is fine for public repos)
-- The five files from Claude downloaded to your computer
-- About 15 minutes
-
----
-
-## Part 1: Create the Repository
-
-**Step 1.** Go to **github.com** and sign in.
-
-**Step 2.** Click the **+** button in the top-right corner of any GitHub page (next to your profile picture). Select **New repository** from the dropdown.
-
-**Step 3.** You'll see the "Create a new repository" page. Fill it in:
-
-- **Repository name:** `local-orchestrator`
-- **Description:** `A Reference Architecture for Local-First AI Agent Orchestration`
-- **Public** (selected — leave it)
-- Check the box: **Add a README file**
-- **Add .gitignore:** Leave as "None"
-- **Choose a license:** Select **MIT License** from the dropdown
-
-**Step 4.** Click the green **Create repository** button at the bottom.
-
-You now have a live repository at `github.com/YOUR-USERNAME/local-orchestrator` with two auto-generated files: a README.md and a LICENSE. You're going to replace both with the real versions.
-
----
-
-## Part 2: Replace the Auto-Generated README
-
-**Step 5.** You should be looking at your new repository's main page. You'll see the README.md file listed. Click on the filename **README.md** to open it.
-
-**Step 6.** Click the **pencil icon** (Edit this file) in the top-right area of the file view.
-
-**Step 7.** Select all the auto-generated text in the editor (Ctrl+A on Windows) and delete it.
-
-**Step 8.** Open the **README.md** file Claude gave you on your computer. Open it with Notepad, TextEdit, or any text editor — NOT Word. Select all the text (Ctrl+A), copy it (Ctrl+C).
-
-**Step 9.** Paste it into the GitHub editor (Ctrl+V).
-
-**Step 10.** Click the green **Commit changes** button (top right). A dialog will appear:
-
-- **Commit message:** `Replace auto-generated README with project README`
-- Leave "Commit directly to the main branch" selected
-- Click **Commit changes**
-
----
-
-## Part 3: Replace the Auto-Generated LICENSE
-
-**Step 11.** Click on **local-orchestrator** at the top of the page (the repository name) to go back to the main repo view.
-
-**Step 12.** Click on the **LICENSE** filename to open it.
-
-**Step 13.** Click the **pencil icon** to edit.
-
-**Step 14.** Select all and delete. Open the LICENSE file Claude gave you, copy its contents, and paste them into the GitHub editor.
-
-**Step 15.** Commit:
-
-- **Commit message:** `Replace auto-generated LICENSE with correct author`
-- Click **Commit changes**
-
----
-
-## Part 4: Create the Main Architecture Document
-
-GitHub creates folders automatically when you put a `/` in a filename. You don't need to create the `docs/` folder separately.
-
-**Step 16.** Go back to the main repository page (click the repo name at the top).
-
-**Step 17.** Click **Add file** (button near the top of the file list) → **Create new file**.
-
-**Step 18.** In the filename field at the top, type:
-
-```
-docs/the-case-for-the-local-orchestrator.md
-```
-
-When you type the `/` after `docs`, GitHub will recognize it as a folder and the display will shift — `docs` will appear as a folder name and the cursor will move to a new field for the filename. This is normal.
-
-**Step 19.** Open the **the-case-for-the-local-orchestrator.md** file from Claude on your computer with a text editor. Select all, copy, and paste into the GitHub editor.
-
-**Step 20.** Commit:
-
-- **Commit message:** `Add reference architecture v5.1.1`
-- Click **Commit changes**
-
----
-
-## Part 5: Create the Evaluation Loop Addendum
-
-**Step 21.** Go back to the main repository page.
-
-**Step 22.** Click **Add file** → **Create new file**.
-
-**Step 23.** In the filename field, type:
-
-```
-docs/addenda/lightweight-evaluation-loop.md
-```
-
-GitHub will create both the `docs/` and `addenda/` folders. Since `docs/` already exists, it will just add `addenda/` inside it.
-
-**Step 24.** Open **lightweight-evaluation-loop.md** from your computer with a text editor. Select all, copy, paste into the GitHub editor.
-
-**Step 25.** Commit:
-
-- **Commit message:** `Add Lightweight Evaluation Loop addendum v2`
-- Click **Commit changes**
-
----
-
-## Part 6: Create the Adversarial Review Methodology
-
-**Step 26.** Go back to the main repository page.
-
-**Step 27.** Click **Add file** → **Create new file**.
-
-**Step 28.** In the filename field, type:
-
-```
-validation/adversarial-review-methodology.md
-```
-
-**Step 29.** Open **adversarial-review-methodology.md** from your computer with a text editor. Select all, copy, paste.
-
-**Step 30.** Commit:
-
-- **Commit message:** `Add adversarial review methodology summary`
-- Click **Commit changes**
-
----
-
-## Part 7: Verify Everything
-
-**Step 31.** Go back to the main repository page. You should see this structure:
-
-```
-docs/
-validation/
-LICENSE
-README.md
-```
-
-**Step 32.** Click into `docs/` — you should see:
-
-```
-addenda/
-the-case-for-the-local-orchestrator.md
-```
-
-**Step 33.** Click into `addenda/` — you should see:
-
-```
-lightweight-evaluation-loop.md
-```
-
-**Step 34.** Go back to the main page and scroll down. GitHub automatically renders your README.md below the file list. Check that the tables, headings, and links all display correctly.
-
-**Step 35.** Click the links in the README to make sure they navigate to the right documents. The three links should go to:
-
-- `docs/the-case-for-the-local-orchestrator.md`
-- `docs/addenda/lightweight-evaluation-loop.md`
-- `validation/adversarial-review-methodology.md`
-
----
-
-## If Something Goes Wrong
-
-**Pasted text looks garbled or has weird characters:**
-You probably opened the .md file in Word instead of a plain text editor. Word adds hidden formatting. Open it in Notepad (Windows) or TextEdit (Mac, set to plain text mode) instead.
-
-**A link in the README doesn't work:**
-Click the pencil icon on README.md and check that the link paths match the actual file locations exactly. Paths are case-sensitive.
-
-**You made a typo in a filename:**
-You can't rename files directly. Instead: open the file, click the pencil to edit, click the three-dot menu, and select "Delete file." Then create a new file with the correct name.
-
-**You accidentally committed the wrong content:**
-Edit the file again with the correct content and commit. GitHub keeps the full history, so nothing is permanently lost.
-
----
-
-## What You'll Have When Done
-
-A public repository at:
-
-```
-github.com/YOUR-USERNAME/local-orchestrator
-```
-
-Anyone can read the reference architecture, the evaluation addendum, and the validation methodology. The README frames the project, the documents speak for themselves, and the adversarial review summary provides provenance without dumping raw review artifacts.
-
-When you're ready to add DRNT implementation code, domain-specific applications, or the full adversarial reviews, they each have a natural place to go — but the repo stands on its own as-is.
+Domain Applications
+The Local-First AI Orchestration reference architecture was designed as a general pattern — bounded local reasoning with structural privacy enforcement — applicable across any environment where AI must operate under privacy constraints, compliance requirements, and human oversight obligations.
+This directory contains domain-specific applications of that architecture, each developed independently and stress-tested through multi-model adversarial review (Claude, GPT-4, Gemini). The domains were selected because they represent fundamentally different operating environments with distinct compliance frameworks, risk profiles, and organizational structures — yet all share the same core architectural need: a governed AI layer that routes to the right intelligence while keeping sensitive data under institutional control.
+One domain — DRNT — intentionally operates outside any external compliance mandate. It is included to demonstrate that the architecture's governance components are not overhead imposed by regulation. They solve a structural problem that exists whether or not a regulator requires them.
+Domains
+Domain	Environment Class	Key Compliance Drivers	Primary Documents
+Federal Regulatory	Large federal agency with field personnel, mission-critical safety systems, and multi-division structure	FedRAMP, FISMA, NIST 800-53, Zero Trust (M-22-09), AI Governance (M-24-10), CUI (32 CFR 2002)	Unified architecture, executive briefing, departmental orchestrator case
+Clinical	Major academic medical center with multi-specialty care, EHR integration, and patient safety requirements	HIPAA, FDA CDS guidance, NIST AI RMF, institutional IRB/governance	Engineering review, adversarial appendix
+K-12 Education	Rural school district with Title I demographics, limited IT staff, and student data protection obligations	FERPA, COPPA, state student data privacy law, IDEA	Implementation analysis, feasibility assessment, landscape research
+SMB	Small and mid-sized businesses with no dedicated IT staff, operating in potentially regulated industries	HIPAA (healthcare), attorney-client privilege (legal), GLBA (financial), general data privacy	Six-document framework series
+DRNT	Personal AI gateway on a three-device ecosystem (Watch, Phone, Desktop) with local-first orchestration and self-imposed governance	Self-imposed: privacy by architecture (Context Packager), append-only audit log, graduated autonomy (WAL 0–3) — no external regulatory mandate	Project description, adversarial reviews, specification documents
+What These Documents Are
+Each domain application takes the reference architecture's core components — the three-tier task classification, the Context Packager, the Workflow Autonomy Levels (WAL 0–3), the append-only audit log, and multi-model routing — and maps them onto the specific systems, regulations, workflows, and organizational realities of that environment.
+The documents were built entirely from public information, published regulations, and general domain knowledge. They do not represent the position of any specific organization. Where a domain application describes a federal agency environment, a clinical environment, or a school district environment, it describes the class of environment — not a particular institution.
+What These Documents Are Not
+Not institutional proposals. No organization has endorsed, commissioned, or reviewed these documents.
+Not implementation specifications. They are architectural frameworks that would require significant institutional engineering to deploy.
+Not vendor recommendations. The architecture is model-agnostic by design. Specific open-source tools are named as implementation examples, not endorsements.
+Adversarial Review Methodology
+Every domain application was subjected to multi-model adversarial review — independent critique from Claude (Anthropic), GPT-4 (OpenAI), and Gemini (Google), with each review's findings incorporated into subsequent versions. The adversarial review methodology is documented separately in the Lightweight Evaluation Loop.
+This process is not a substitute for institutional peer review, red-team assessment, or authority-to-operate evaluation. It is a pre-submission quality gate that surfaces structural weaknesses, regulatory gaps, and overclaims before domain experts invest time in evaluation.
+Cross-Domain Validation
+The strongest evidence for the architecture's generality is that the same pattern — local context awareness with bounded reasoning and structural privacy — maps cleanly onto environments as different as federal safety inspection, clinical care coordination, K-12 student data protection, and small business operations. The compliance frameworks differ. The risk profiles differ. The organizational structures differ. The architectural response is structurally identical:
+A local model classifies and routes — it does not try to answer complex questions.
+Sensitive data is stripped before it leaves the local environment — structurally, not by policy.
+Cloud frontier models handle complex reasoning — receiving only curated, minimized context.
+Every interaction is logged immutably — enabling audit, accountability, and earned trust.
+Autonomy is graduated — all capabilities start at WAL-0 (recommend only) and promote through demonstrated reliability.
+DRNT extends this validation in a specific way: it removes the external compliance driver entirely. The four institutional domains demonstrate that the architecture meets regulatory requirements across different frameworks. DRNT demonstrates that the governance components — the Context Packager, the audit log, the WAL progression — remain structurally valuable even when no regulation demands them. A single user choosing to govern their own AI interactions the same way an institution would is not compliance theater. It is evidence that the architecture addresses a real problem at every scale, not just a regulatory one.
+The domain applications demonstrate that this is not a pattern that works in one context. It is a pattern that works wherever the problem is the same: AI must be useful, but data must stay governed.
