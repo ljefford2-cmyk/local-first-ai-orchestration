@@ -14,7 +14,7 @@ the district (the district) stands at a strategic inflection point. The uncontro
 
 This consolidated report synthesizes two independent AI research analyses — one from Claude (Anthropic), focused on Georgia legal compliance and cost modeling, and one from Gemini (Google), focused on K-12 operational scenarios and technical specification — into a single, actionable blueprint. The result is a Local-First AI Orchestration System designed specifically for the county's Title I, rural context: one that keeps student data on district-controlled hardware in the district seat while leveraging frontier cloud models only for anonymized, privacy-safe instructional tasks.
 
-| **The Core Principle: Route, Don****'****t Reason** The the district central node does not compete with cloud AI models. It acts as a Chief of Staff — handling deterministic lookups and structured data verification locally, and packaging only anonymized context for cloud escalation. AI handles assembly. Humans make decisions. Student data stays in Georgia. |
+| **The Core Principle: Bounded Local Reasoning** The district central node does not compete with cloud AI models. It acts as a Chief of Staff — handling deterministic lookups and structured data verification locally, and packaging only anonymized context for cloud escalation. AI handles assembly. Humans make decisions. Student data stays in Georgia. |
 | --- |
 
 ## **What the Board Needs to Know**
@@ -49,7 +49,7 @@ Attempting this deployment in isolation would create extreme technical debt risk
 
 # **Section 2: Technical Architecture — The the district central node**
 
-## **2.1 Architecture Philosophy: Route, Don****'****t Reason**
+## **2.1 Architecture Philosophy: Bounded Local Reasoning**
 
 The Local Orchestrator is not a chatbot. It is a traffic controller for intelligence. Its primary directive is to prevent expensive, privacy-risky cloud processing for tasks that can be handled cheaply and safely on the the district seat server. Most current AI interactions in schools involve context dumping — pasting raw student records into cloud interfaces. The Orchestrator intercepts this pattern entirely.
 
@@ -143,7 +143,7 @@ The district's internal fiber WAN links all outlying schools to the district sea
 
 ## **3.4 Network Upgrades ****&**** E-Rate Strategy**
 
-The Route, Don't Reason model saves external internet bandwidth but increases internal WAN traffic. When a class of 30 students at Hoboken Elementary interacts with the AI, that data flows to the the district seat hub over district fiber. Fiber links connecting outlying schools must be verified for capacity — links currently running at 1Gbps may require upgrading to 10Gbps to prevent bottlenecks during peak instructional periods.
+The Bounded Local Reasoning model saves external internet bandwidth but increases internal WAN traffic. When a class of 30 students at Hoboken Elementary interacts with the AI, that data flows to the the district seat hub over district fiber. Fiber links connecting outlying schools must be verified for capacity — links currently running at 1Gbps may require upgrading to 10Gbps to prevent bottlenecks during peak instructional periods.
 
 E-Rate Category 2 funding explicitly covers switches, routers, cabling, and wireless access points — the network infrastructure supporting the AI deployment. AI compute hardware itself is not E-Rate eligible. Districts that missed the FY2026 E-Rate window should prepare for FY2027 filing (opening January 2027), using the intervening period to design network architecture specifications. By maximizing E-Rate subsidies on the network, the district frees SPLOST capital to fund the the district seat server cluster.
 
