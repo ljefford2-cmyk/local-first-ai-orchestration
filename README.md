@@ -70,7 +70,7 @@ The `domain-applications/` directory contains independent architectural framewor
 * **Clinical** — engineering review, adversarial appendix, and patient narrative for AI orchestration in a clinical environment with HIPAA and FDA CDS constraints
 * **K-12 Education** — feasibility analysis, implementation report, and landscape research for district-level sovereign AI deployment
 * **SMB** — six-document framework covering business readiness, reference architecture, vendor evaluation, regulated-industry supplement, and operations governance
-* **Personal (DRNT)** — Six interface specifications for DRNT, a personal AI gateway implementing the full architecture with append-only audit, graduated trust, and structural privacy enforcement. DRNT operates under no external compliance mandate — its inclusion demonstrates that the governance components remain valuable as self-imposed discipline, not only as regulatory response.
+* **Personal (DRNT)** — Six interface specifications and three governance artifacts for DRNT, a personal AI gateway implementing the full architecture with append-only audit, graduated trust, and structural privacy enforcement. The governance artifacts consolidate the spec foundations into implementable references and map the governance layer onto external execution frameworks (NemoClaw/OpenShell). DRNT operates under no external compliance mandate — its inclusion demonstrates that the governance components remain valuable as self-imposed discipline, not only as regulatory response.
 
 Each domain was developed independently and stress-tested through multi-model adversarial review. See [`domain-applications/README.md`](domain-applications/README.md) for the full overview.
 
