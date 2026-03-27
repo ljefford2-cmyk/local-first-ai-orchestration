@@ -2,7 +2,7 @@
 
 **Don't Reason, Navigate & Task**
 
-Six interface specifications and three supplementary documents implementing the local-first AI orchestration architecture at personal scale. DRNT is a wrist-and-pocket gateway — an Apple Watch and iPhone interface to a local AI orchestrator running on consumer desktop hardware — that routes requests to the right intelligence and returns results for human decision-making.
+Six interface specifications and three governance artifacts implementing the local-first AI orchestration architecture at personal scale. DRNT is a wrist-and-pocket gateway — an Apple Watch and iPhone interface to a local AI orchestrator running on consumer desktop hardware — that routes requests to the right intelligence and returns results for human decision-making.
 
 DRNT operates under no external compliance mandate. Its inclusion in this repository demonstrates that the governance components (append-only audit, graduated trust, structural privacy enforcement) remain valuable as self-imposed discipline, not only as regulatory response.
 
@@ -17,13 +17,15 @@ DRNT operates under no external compliance mandate. Its inclusion in this reposi
 | [Spec 5](DRNT_Spec5_Override_Semantics.md) | Override Semantics | What happens when the human intervenes. Recording, rollback, WAL adjustment, successor job model, modified result lineage, and conflict resolution. |
 | [Spec 6](DRNT_Spec6_Silo_Runtime_Security.md) | Silo Runtime Security | Enforcement model for the execution silo. Three complementary enforcement layers (runtime isolation, behavioral governance, structural privacy), skill lifecycle, worker egress policy, sandbox blueprints, and operator TUI. |
 
-## Supplementary Documents
+## Governance Artifacts
+
+These three documents consolidate and extend the specifications into a complete governance series. The Event Schema supersedes Spec 1 v1.5. The Capability Trust Profile consolidates Spec 2. The NemoClaw Overlay maps DRNT governance onto external execution frameworks.
 
 | Document | Description |
 | --- | --- |
-| [Capability Trust Profile](DRNT_Capability_Trust_Profile.md) | Trust scoring model for capability promotion and demotion across WAL levels. |
-| [Event Schema](DRNT_Event_Schema.md) | Extended event schema reference beyond the Spec 1 foundation. |
-| [NemoClaw Governance Overlay](DRNT_NemoClaw_Governance_Overlay.md) | Governance mapping between DRNT and the NVIDIA NemoClaw framework. |
+| [Event Schema v2.0](DRNT_Event_Schema.md) | Canonical reference for every event the DRNT governance layer can emit. Consolidates and supersedes Spec 1 v1.5 event definitions. Single schema for logging — a developer implementing the log writer writes to this and nothing else. |
+| [Capability Trust Profile v1.0](DRNT_Capability_Trust_Profile.md) | Capability registry, WAL state machine, per-action permission matrix, and promotion/demotion rules. A developer implementing the permission checker and trust lifecycle writes to this spec. |
+| [NemoClaw Governance Overlay v1.0](DRNT_NemoClaw_Governance_Overlay.md) | Architectural compatibility analysis mapping DRNT governance onto NVIDIA's NemoClaw/OpenShell execution infrastructure. Identifies where they align, where DRNT extends OpenShell, and where OpenShell fills gaps DRNT left to implementation. |
 
 ## Spec Dependencies
 ```
