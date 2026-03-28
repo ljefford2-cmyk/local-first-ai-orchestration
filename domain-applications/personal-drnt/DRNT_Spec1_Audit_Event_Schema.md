@@ -283,7 +283,7 @@ Transmitted to the desktop hub over Tailscale. If offline, events queue locally 
 - Feedback-to-behavior loops (Evaluation Loop document)
 - Task taxonomy, classification logic (operational config)
 
-## 9. Cross-References to Specs 2–6
+## 9. Cross-References to Specs 2–7
 
 | Spec | Primary Events | Relationship |
 | --- | --- | --- |
@@ -292,7 +292,7 @@ Transmitted to the desktop hub over Tailscale. If offline, events queue locally 
 | **4** | `job.dispatched`, `egress.validation_failure`, `model.response` | route_id + egress_config_hash in job.dispatched. assembled_payload_hash verified by gateway. egress.validation_failure for transport/policy failures (not strip failures). same_capability_retry enforces v1 boundary. |
 | **5** | `human.override`, `job.revoked`, `wal.demoted` | Successor jobs via parent_job_id. job.revoked for post-delivery withdrawal. human.reviewed modified artifact linkage. Conditional demotion inspects prior failure type. |
 | **6** | `worker.egress_request`, `worker.egress_blocked`, `worker.sandbox_violation` | Schema version bump to 1.6. Source enum extension: worker_egress_proxy, sandbox_runtime. All worker.* events are durable. Sandbox violation sentinel "worker_sandbox" excluded from WAL counters. |
-
+| **7** | `system.connectivity`, `system.hub_switch`, `wal.demoted(temporal_decay)` | `wal.demoted` trigger enum extended with `temporal_decay`. `job.queued` reason enum extended with `recovery`. `job.failed` error_class extended with `recovery_exhausted`. `system.hub_switch` event added. `decay_policy` added to capability configuration (Spec 2). |
 ---
 
 *End of Spec 1 — FINAL. Part of the DRNT Interface Specification series: Spec 1 (Audit/Event Schema), Spec 2 (Capability Model), Spec 3 (Context Boundary), Spec 4 (Egress Policy Binding), Spec 5 (Override Semantics), Spec 6 (Silo Runtime Security), Spec 7 (Signal Chain Resilience).*
