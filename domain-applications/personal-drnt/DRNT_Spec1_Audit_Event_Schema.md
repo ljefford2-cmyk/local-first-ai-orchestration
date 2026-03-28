@@ -295,4 +295,4 @@ Transmitted to the desktop hub over Tailscale. If offline, events queue locally 
 
 ---
 
-*End of Spec 1 — FINAL. Part of the DRNT Interface Specification series: Spec 1 (Audit/Event Schema), Spec 2 (Capability Model), Spec 3 (Context Boundary), Spec 4 (Egress Policy Binding), Spec 5 (Override Semantics), Spec 6 (Silo Runtime Security).*
+*End of Spec 1 — FINAL. Part of the DRNT Interface Specification series: Spec 1 (Audit/Event Schema), Spec 2 (Capability Model), Spec 3 (Context Boundary), Spec 4 (Egress Policy Binding), Spec 5 (Override Semantics), Spec 6 (Silo Runtime Security), Spec 7 (Signal Chain Resilience).*
