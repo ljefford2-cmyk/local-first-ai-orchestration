@@ -2,6 +2,8 @@
 
 **Don't Reason, Navigate & Task**
 
+*The acronym is historical. The governing architectural principle is: Know what you have. Package what you need.*
+
 Seven interface specifications and three governance artifacts implementing the local-first AI orchestration architecture at personal scale. DRNT is a wrist-and-pocket gateway — an Apple Watch and iPhone interface to a local AI orchestrator running on consumer desktop hardware — that routes requests to the right intelligence and returns results for human decision-making.
 
 DRNT operates under no external compliance mandate. Its inclusion in this repository demonstrates that the governance components (append-only audit, graduated trust, structural privacy enforcement) remain valuable as self-imposed discipline, not only as regulatory response.
