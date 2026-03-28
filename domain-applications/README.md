@@ -30,7 +30,7 @@ The documents were built entirely from public information, published regulations
 
 ## Adversarial Review Methodology
 
-Every domain application was subjected to multi-model adversarial review — independent critique from Claude (Anthropic), GPT-4 (OpenAI), and Gemini (Google), with each review's findings incorporated into subsequent versions. The adversarial review methodology is documented separately in the [Lightweight Evaluation Loop](../DRNT_Lightweight_Evaluation_Loop_v2.md).
+Every domain application was subjected to multi-model adversarial review — independent critique from Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google), and Copilot (Microsoft), with each review's findings incorporated into subsequent versions. The adversarial review methodology is documented separately in the [Adversarial Review Methodology](../validation/adversarial-review-methodology.md), and the full analysis of model biases and why multi-model review matters is in [Why One AI Is Not Enough](../validation/why-one-ai-is-not-enough.md).
 
 This process is not a substitute for institutional peer review, red-team assessment, or authority-to-operate evaluation. It is a pre-submission quality gate that surfaces structural weaknesses, regulatory gaps, and overclaims before domain experts invest time in evaluation.
 
