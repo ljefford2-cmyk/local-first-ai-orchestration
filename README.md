@@ -60,7 +60,7 @@ It is not an argument against cloud AI. The entire architecture depends on cloud
 
 It is not a claim that local models don't reason. They do. The architecture defines where that reasoning is safe and where it is not.
 
-It is not complete. The L2 reconciliation layer, temporal decay for WAL trust levels, and device-specific signal chain failure modes are specified but not yet implemented. V1 is the foundation.
+It is not complete. The L2 reconciliation layer is specified but not yet implemented. WAL temporal decay and device signal chain failure modes are fully specified (DRNT Spec 7) but awaiting implementation alongside the V1 hub build sequence.
 
 ## Domain Applications
 
@@ -70,7 +70,7 @@ The `domain-applications/` directory contains independent architectural framewor
 * **Clinical** — engineering review, adversarial appendix, and patient narrative for AI orchestration in a clinical environment with HIPAA and FDA CDS constraints
 * **K-12 Education** — feasibility analysis, implementation report, and landscape research for district-level sovereign AI deployment
 * **SMB** — six-document framework covering business readiness, reference architecture, vendor evaluation, regulated-industry supplement, and operations governance
-* **Personal (DRNT)** — Six interface specifications and three governance artifacts for DRNT, a personal AI gateway implementing the full architecture with append-only audit, graduated trust, and structural privacy enforcement. The governance artifacts consolidate the spec foundations into implementable references and map the governance layer onto external execution frameworks (NemoClaw/OpenShell). DRNT operates under no external compliance mandate — its inclusion demonstrates that the governance components remain valuable as self-imposed discipline, not only as regulatory response.
+* **Personal (DRNT)** — Seven interface specifications and three governance artifacts for DRNT, a personal AI gateway implementing the full architecture with append-only audit, graduated trust, and structural privacy enforcement. Spec 7 (Signal Chain Resilience) covers device failure modes, stale job recovery, idempotency, MacBook fallback with split-brain prevention, and WAL temporal decay. The governance artifacts consolidate the spec foundations into implementable references and map the governance layer onto external execution frameworks (NemoClaw/OpenShell). DRNT operates under no external compliance mandate — its inclusion demonstrates that the governance components remain valuable as self-imposed discipline, not only as regulatory response.
 
 Each domain was developed independently and stress-tested through multi-model adversarial review. See [`domain-applications/README.md`](domain-applications/README.md) for the full overview.
 
