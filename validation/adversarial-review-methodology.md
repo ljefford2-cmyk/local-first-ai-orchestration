@@ -16,6 +16,8 @@ The local orchestrator architecture was subjected to structured adversarial revi
 | Gemini | Google | Most theoretically ambitious. Identified long-horizon research implications. | Operationally miscalibrated — recommendations often exceeded the resource constraints of the target environments. |
 | Copilot | Microsoft | Most structured, checklist-oriented. Best ROI for experimental planning per token spent. | Shallow coverage — competent but rarely surfaced novel concerns the other three missed. |
 
+For detailed model bias profiles, comparative scoring, and the operational methodology behind this review process, see [Why One AI Is Not Enough](why-one-ai-is-not-enough.md).
+
 ### Domains Reviewed
 
 1. **Federal Proposal** — Regulatory enforcement environment with safety-critical consequences and high task repetition.
@@ -95,4 +97,4 @@ The review process validated its own premise: multi-model comparison surfaces co
 
 ---
 
-*Full adversarial review documents are retained in the project archive. This summary covers the methodology, key findings, and architectural changes driven by the review process.*
+*Full adversarial review documents are retained in the project archive. This summary covers the methodology, key findings, and architectural changes driven by the review process. For the full analysis of model biases, the operational methodology, and the case for why multi-model review matters, see [Why One AI Is Not Enough](why-one-ai-is-not-enough.md).*
