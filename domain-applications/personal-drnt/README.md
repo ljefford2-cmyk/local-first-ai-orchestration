@@ -16,7 +16,7 @@ DRNT operates under no external compliance mandate. Its inclusion in this reposi
 | [Spec 4](DRNT_Spec4_Egress_Policy.md) | Egress Policy Binding | How Context Packager decisions become routing constraints at the network layer. Egress registry, gateway check sequence, Docker network topology, provider adapters, and forensic reconstruction. |
 | [Spec 5](DRNT_Spec5_Override_Semantics.md) | Override Semantics | What happens when the human intervenes. Recording, rollback, WAL adjustment, successor job model, modified result lineage, and conflict resolution. |
 | [Spec 6](DRNT_Spec6_Silo_Runtime_Security.md) | Silo Runtime Security | Enforcement model for the execution silo. Three complementary enforcement layers (runtime isolation, behavioral governance, structural privacy), skill lifecycle, worker egress policy, sandbox blueprints, and operator TUI. |
-| [Spec 7](Spec7_Signal_Chain_Resilience.md) | Signal Chain Resilience | Device failure modes across the Watch → iPhone → Desktop Hub → Cloud signal chain. Failure detection with hysteresis, stale job recovery, idempotency enforcement, MacBook fallback with split-brain prevention, offline decision replay with optimistic concurrency control, and WAL temporal decay. |
+| [Spec 7](DRNT_Spec7_Signal_Chain_Resilience.md) |Signal Chain Resilience | Device failure modes across the Watch → iPhone → Desktop Hub → Cloud signal chain. Failure detection with hysteresis, stale job recovery, idempotency enforcement, MacBook fallback with split-brain prevention, offline decision replay with optimistic concurrency control, and WAL temporal decay. |
 
 ## Governance Artifacts
 
