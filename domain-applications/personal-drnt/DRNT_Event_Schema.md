@@ -164,7 +164,7 @@ Every job produces at minimum `job.submitted` and one terminal event: `job.deliv
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `reason` | `enum` | `connectivity │ rate_limit │ capacity` |
+| `reason` | `enum` | `connectivity │ rate_limit │ capacity │ recovery` |
 | `position` | `int` | Queue position. |
 | `estimated_wait_ms` | `int │ null` | Estimated wait time. Null if unknown. |
 
@@ -261,7 +261,7 @@ Every job produces at minimum `job.submitted` and one terminal event: `job.deliv
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `error_class` | `enum` | `timeout │ rate_limit │ model_error │ context_error │ policy_block │ override_cancel │ override_redirect │ internal` |
+| `error_class` | `enum` | `timeout │ rate_limit │ model_error │ context_error │ policy_block │ override_cancel │ override_redirect │ internal │ recovery_exhausted` |
 | `error_message` | `string` | Human-readable description. |
 | `retryable` | `bool` | Whether the orchestrator considers this retriable. |
 | `retry_count` | `int` | Number of retries already attempted. |
@@ -407,7 +407,7 @@ WAL state is per-capability. These events record state machine transitions and p
 | `capability_name` | `string` | Human-readable name. |
 | `from_level` | `int (-1..3)` | Previous effective WAL. |
 | `to_level` | `int (-1..3)` | New effective WAL. `-1` = suspended. |
-| `trigger` | `enum` | `error │ anomaly │ override │ model_change │ manual │ config_reconcile │ strip_failure` |
+| `trigger` | `enum` | `error │ anomaly │ override │ model_change │ manual │ config_reconcile │ strip_failure │ temporal_decay` |
 | `incident_ref` | `string │ null` | `source_event_id` of the triggering incident. Null for manual/config_reconcile. |
 
 **Demotion rules:**
@@ -675,6 +675,22 @@ Infrastructure-level. `job_id` is null in the envelope.
 | `target` | `string` | Provider ID (e.g., `claude_api`) or route_id (e.g., `claude-sonnet-default`). |
 | `status` | `enum` | `connected │ degraded │ disconnected` |
 | `latency_ms` | `int │ null` | Measured latency. Null if disconnected. |
+
+---
+
+#### `system.hub_switch`
+
+**When it fires:** User manually switches the authoritative hub (e.g., Desktop → MacBook fallback).
+
+**Durability:** D
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `from_hub` | `string` | Hostname of the hub being demoted. |
+| `to_hub` | `string` | Hostname of the hub being activated. |
+| `reason` | `enum` | `manual │ primary_failure` |
+| `pending_jobs_on_old_hub` | `int` | Count of jobs still pending on the demoted hub. |
+| `suspend_command_delivered` | `bool` | Whether the demoted hub received the suspension signal. |
 
 ---
 
