@@ -39,6 +39,7 @@ The boundary is not between reasoning and not-reasoning. It is between reasoning
 | [The Case for the Local Orchestrator](docs/the-case-for-the-local-orchestrator.md) | Full reference architecture. Core principle, Context Packager, Execution Safety Layer, WAL governance, audit log, multi-model dispatch, failure domain classification, implementation metrics, validation methodology. |
 | [Lightweight Evaluation Loop](docs/addenda/lightweight-evaluation-loop.md) | Addendum. Personal-scale quality feedback — how deployments with high question diversity and low repetition capture improvement signals without formal test suites. |
 | [Adversarial Review Methodology](validation/adversarial-review-methodology.md) | Summary of the multi-model review process, key findings, and what changed as a result. |
+| [Why One AI Is Not Enough](validation/why-one-ai-is-not-enough.md) | Multi-model adversarial review in depth: observed model biases, comparative scoring, operational methodology, and why heterogeneous review produces stronger validation than any single model. |
 
 ## Validation
 
@@ -48,7 +49,7 @@ The most significant finding: all four reviewers independently identified that t
 
 v5.2 was driven by a structured redline review that identified the absence of execution governance as the architecture's most significant remaining gap. The Execution Safety Layer, adversarial input handling, failure domain classification, WAL temporal dynamics, implementation metrics roadmap, and terminology table were added in response.
 
-See [Adversarial Review Methodology](validation/adversarial-review-methodology.md) for details.
+See [Adversarial Review Methodology](validation/adversarial-review-methodology.md) for the process summary and [Why One AI Is Not Enough](validation/why-one-ai-is-not-enough.md) for the full analysis of model biases, the operational methodology, and why multi-model review matters.
 
 ## What This Architecture Is Not
 
