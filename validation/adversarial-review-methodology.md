@@ -1,4 +1,3 @@
-[adversarial-review-methodology.md](https://github.com/user-attachments/files/26159083/adversarial-review-methodology.md)
 # Adversarial Review Methodology
 
 *How the architecture was validated and what changed as a result*
