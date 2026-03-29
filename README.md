@@ -1,8 +1,8 @@
-# The Case for the Local Orchestrator
+# Why You Cannot Depend on a Single AI Model
 
 **A Reference Architecture for Local-First AI Agent Orchestration**
 
-v5.2 — Post-Adversarial Edition — March 2026
+v6.0 — March 2026
 
 ---
 
@@ -10,7 +10,7 @@ v5.2 — Post-Adversarial Edition — March 2026
 
 A design pattern for placing a local AI model between users and cloud frontier models. The local model holds personal context, preferences, and memory. It decides what stays local, what goes to the cloud, and how to package what goes. Cloud models handle complex reasoning. The user retains decision authority.
 
-This is a reference architecture — technology-stack-agnostic, domain-agnostic, and not a product. It has been applied and validated across federal regulatory, clinical, small business, K-12 education, and personal-scale deployments.
+This is a reference architecture — technology-stack-agnostic, domain-agnostic, and not a product. It was designed and stress-tested across multiple implementation domains and specified to enforcement depth in the DRNT personal AI gateway.
 
 ## Core Principle
 
@@ -26,54 +26,53 @@ The boundary is not between reasoning and not-reasoning. It is between reasoning
 
 | Component | Purpose |
 | --- | --- |
-| **Context Packager** | Structural privacy gate and prompt engineer. All outbound data passes through it. Sensitive data is stripped by rule, not by judgment. Default is deny. Includes adversarial input handling to enforce hard separation between instructions and data in every outbound payload. |
-| **Execution Safety Layer** | Governs what happens when a decision becomes an action. Network isolation at the container topology level, tool sandboxing with constrained permissions, connector trust levels (read-only / write-guarded / privileged), and WAL-gated execution. Added in v5.2. |
-| **Workflow Autonomy Levels (WAL 0–3)** | Graduated trust. Every capability starts at WAL-0 (recommend only). Promotion requires demonstrated reliability. Anomalies trigger automatic demotion. Trust scores incorporate temporal decay, recency weighting, and failure-type weighting (routing errors carry less weight than policy violations). |
-| **Append-Only Audit Log** | Every routing decision, packaging decision, model response, and human decision is logged in a cryptographically chained journal. Non-optional. Source for all implementation metrics (local resolution rate, context reduction ratio, override frequency, retry rate, trust demotion frequency). |
-| **Multi-Model Dispatch** | Route different task types to different cloud models based on measured strengths. V1 is single-endpoint; multi-model dispatch depends on the reconciliation layer. |
+| **Context Packager** | Structural privacy gate and prompt engineer. All outbound data passes through it. Sensitive data is stripped by rule, not by judgment. Default is deny. |
+| **Execution Safety Layer** | Governs what happens when a decision becomes an action. Runtime isolation at the container level, behavioral governance via WAL, structural privacy on all outbound paths. No layer trusts another layer's enforcement. |
+| **Workflow Autonomy Levels (WAL 0–3)** | Graduated trust. Every capability starts at WAL-0 (recommend only). Promotion requires demonstrated reliability. Anomalies trigger automatic demotion. Trust decays with inactivity. |
+| **Append-Only Audit Log** | Every routing decision, packaging decision, model response, and human decision is logged in a cryptographically chained journal. Non-optional. The log writer is a separate process — if it is down, the orchestrator halts. |
+| **Multi-Model Dispatch** | Route different task types to different cloud models based on measured strengths. Vendor independence is architectural: model swap target is less than 24 hours. |
 
 ## Documents
 
 | Document | Description |
 | --- | --- |
-| [The Case for the Local Orchestrator](docs/the-case-for-the-local-orchestrator.md) | Full reference architecture. Core principle, Context Packager, Execution Safety Layer, WAL governance, audit log, multi-model dispatch, failure domain classification, implementation metrics, validation methodology. |
-| [Lightweight Evaluation Loop](docs/addenda/lightweight-evaluation-loop.md) | Addendum. Personal-scale quality feedback — how deployments with high question diversity and low repetition capture improvement signals without formal test suites. |
-| [Adversarial Review Methodology](validation/adversarial-review-methodology.md) | Summary of the multi-model review process, key findings, and what changed as a result. |
-| [Why One AI Is Not Enough](validation/why-one-ai-is-not-enough.md) | Multi-model adversarial review in depth: observed model biases, comparative scoring, operational methodology, and why heterogeneous review produces stronger validation than any single model. |
+| [Why You Cannot Depend on a Single AI Model](docs/why-you-cannot-depend-on-a-single-ai-model.md) | Full reference architecture. The six friction points of single-model deployment, the local orchestrator pattern, Context Packager, Execution Safety Layer, WAL governance, audit log, multi-model dispatch, validation methodology. |
+| [DRNT Specification Technical Overview](docs/drnt-specification-technical-overview.md) | Concise technical summary of the seven DRNT interface specifications and three governance artifacts. Key architectural decisions and adversarial review methodology. |
+| [Lightweight Evaluation Loop](docs/lightweight-evaluation-loop.md) | Personal-scale quality feedback — how deployments with high question diversity and low repetition capture improvement signals without formal test suites. |
 
 ## Validation
 
-The architecture has been stress-tested through structured adversarial review by four independent AI models — Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google), and Copilot (Microsoft) — across five implementation domains. Reviews were conducted independently with identical prompts and no cross-contamination. Findings were reconciled across all reviews, and convergent criticisms drove structural revisions to the architecture.
+| Document | Description |
+| --- | --- |
+| [Adversarial Review Methodology](validation/adversarial-review-methodology.md) | Summary of the multi-model review process, key findings, and what changed as a result. |
+| [Why One AI Is Not Enough](validation/why-one-ai-is-not-enough.md) | Lessons from multi-model adversarial review of AI system architecture. Methodology, model bias profiles, and the case for heterogeneous review. |
 
-The most significant finding: all four reviewers independently identified that the original core principle ("route, don't reason") created a structural tension with what the architecture actually does. This convergent criticism drove the v5.0 reframe to the current principle, replacing a binary framing with a spectrum based on error recoverability.
+The architecture has been stress-tested through structured adversarial review by four independent AI models — Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google), and Copilot (Microsoft). Reviews were conducted independently with identical prompts and no cross-contamination. Findings were reconciled across all reviews, and convergent criticisms drove structural revisions.
 
-v5.2 was driven by a structured redline review that identified the absence of execution governance as the architecture's most significant remaining gap. The Execution Safety Layer, adversarial input handling, failure domain classification, WAL temporal dynamics, implementation metrics roadmap, and terminology table were added in response.
+The most significant convergent finding: all four reviewers independently identified that the original core principle created a structural tension with what the architecture actually does. This drove the reframe to the current principle, replacing a binary framing with a spectrum based on error recoverability.
 
-See [Adversarial Review Methodology](validation/adversarial-review-methodology.md) for the process summary and [Why One AI Is Not Enough](validation/why-one-ai-is-not-enough.md) for the full analysis of model biases, the operational methodology, and why multi-model review matters.
+## DRNT Specification Suite
 
-## What This Architecture Is Not
+The `specs/` and `governance/` directories contain the DRNT (Don't Reason, Navigate & Task) personal-scale proof of concept — seven interface specifications and three governance artifacts specified to enforcement depth.
 
-It is not a product. It is a reference pattern.
+**Status:** Architecture specified. Not yet implemented. The build sequence is locked: Audit Log Writer → Orchestrator Skeleton → Model Routing → Context Packager.
 
-It is not a daily planner, productivity suite, or task manager. If a deployment helps someone plan their day, that is because they routed a planning request — not because planning is what the architecture is for.
+| Directory | Artifact | Description |
+| --- | --- | --- |
+| `specs/` | [Spec 1: Audit Event Schema](specs/DRNT_Spec1_Audit_Event_Schema.md) | Single event format for the append-only audit log. 20+ event types, SHA-256 hash chain, fail-closed guarantee. |
+| `specs/` | [Spec 2: Capability Model](specs/DRNT_Spec2_Capability_Model.md) | Capability registry mapping each WAL level to per-action gate policies. Promotion criteria, demotion triggers. |
+| `specs/` | [Spec 3: Context Boundary](specs/DRNT_Spec3_Context_Boundary.md) | Context Packager data structure, sensitivity classification, four-stage transform pipeline. |
+| `specs/` | [Spec 4: Egress Policy Binding](specs/DRNT_Spec4_Egress_Policy.md) | Egress endpoint registry, 11-step gateway check sequence, Docker network topology enforcement. |
+| `specs/` | [Spec 5: Override Semantics](specs/DRNT_Spec5_Override_Semantics.md) | Four override types, successor job model, conditional demotion separating routing from infrastructure failures. |
+| `specs/` | [Spec 6: Silo Runtime Security](specs/DRNT_Spec6_Silo_Runtime_Security.md) | Three-layer enforcement model for worker agent execution. Skill lifecycle, worker egress proxy. |
+| `specs/` | [Spec 7: Signal Chain Resilience](specs/DRNT_Spec7_Signal_Chain_Resilience.md) | Device failure modes, health probe hysteresis, stale job recovery, offline decision replay, WAL temporal decay. |
+| `governance/` | [Event Schema v2.0](governance/DRNT_Event_Schema.md) | Complete field-level reference for all event types. Companion to Spec 1. |
+| `governance/` | [Capability Trust Profile](governance/DRNT_Capability_Trust_Profile.md) | Trust lifecycle: ring buffer mechanics, promotion criteria, demotion rules. Companion to Spec 2. |
+| `governance/` | [NemoClaw Governance Overlay](governance/DRNT_NemoClaw_Governance_Overlay.md) | Maps DRNT governance to NVIDIA's NemoClaw/OpenShell ecosystem. |
 
-It is not an argument against cloud AI. The entire architecture depends on cloud models for complex reasoning. It is an argument for local control over what context reaches those models and what actions their outputs can trigger.
+## External Engagement
 
-It is not a claim that local models don't reason. They do. The architecture defines where that reasoning is safe and where it is not.
-
-It is not complete. The L2 reconciliation layer is specified but not yet implemented. WAL temporal decay and device signal chain failure modes are fully specified (DRNT Spec 7) but awaiting implementation alongside the V1 hub build sequence.
-
-## Domain Applications
-
-The `domain-applications/` directory contains independent architectural frameworks applying this pattern across five sectors. Each was built from public information, published regulations, and general domain knowledge — they do not represent the position of any specific organization.
-
-* **Federal Regulatory** — unified architecture, executive briefing, and departmental orchestrator case for a large federal agency environment operating under FedRAMP, FISMA, and Zero Trust mandates
-* **Clinical** — engineering review, adversarial appendix, and patient narrative for AI orchestration in a clinical environment with HIPAA and FDA CDS constraints
-* **K-12 Education** — feasibility analysis, implementation report, and landscape research for district-level sovereign AI deployment
-* **SMB** — six-document framework covering business readiness, reference architecture, vendor evaluation, regulated-industry supplement, and operations governance
-* **Personal (DRNT)** — Seven interface specifications and three governance artifacts for DRNT, a personal AI gateway implementing the full architecture with append-only audit, graduated trust, and structural privacy enforcement. Spec 7 (Signal Chain Resilience) covers device failure modes, stale job recovery, idempotency, MacBook fallback with split-brain prevention, and WAL temporal decay. The governance artifacts consolidate the spec foundations into implementable references and map the governance layer onto external execution frameworks (NemoClaw/OpenShell). DRNT operates under no external compliance mandate — its inclusion demonstrates that the governance components remain valuable as self-imposed discipline, not only as regulatory response.
-
-Each domain was developed independently and stress-tested through multi-model adversarial review. See [`domain-applications/README.md`](domain-applications/README.md) for the full overview.
+**NVIDIA NemoClaw Community.** RFC #442 (WAL Integration Profile for OpenShell) was submitted to the NemoClaw GitHub repository and triaged by an NVIDIA engineer. The [NemoClaw Governance Overlay](governance/DRNT_NemoClaw_Governance_Overlay.md) maps the DRNT trust model to the OpenShell ecosystem. The [WAL Integration Profile](WAL_Integration_Profile_OpenShell_v3.pdf) is included in this repository.
 
 ## License
 
@@ -83,4 +82,4 @@ Each domain was developed independently and stress-tested through multi-model ad
 
 Lawrence Jeffords — Nahunta, Georgia
 
-Architecture developed and validated March 2026 through multi-model adversarial review across federal regulatory, clinical, SMB framework, K-12 education, and personal-scale (DRNT) domains.
+Architecture developed and validated March 2026 through multi-model adversarial review.
