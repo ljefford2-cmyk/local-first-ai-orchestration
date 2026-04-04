@@ -73,7 +73,7 @@ The architecture has received external engagement beyond the adversarial review 
 
 ## What This Specification Suite Demonstrates
 
-The DRNT specifications are not a product. They are an implementation of the local-first AI orchestration pattern — described at the reference architecture level in "[Why You Cannot Depend on a Single AI Model](why-you-cannot-depend-on-a-single-ai-model.md)" — can be specified to enforcement depth.
+The DRNT specifications are not a product. They are an implementation of the local-first AI orchestration pattern — described at the reference architecture level in "[Why You Cannot Depend on a Single AI Model](why-you-cannot-depend-on-a-single-ai-model.md)" — specified to enforcement depth.
 
 Specifically, the suite demonstrates that:
 
