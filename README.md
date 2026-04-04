@@ -2,7 +2,9 @@
 
 **A Reference Architecture for Local-First AI Agent Orchestration**
 
-v6.0 — March 2026
+> **DRNT Architecture v6.0** | Canonical specification source
+> Implementation: [local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway) (v0.1.0)
+> Supersedes: [Local-AI-Orchestrator](https://github.com/ljefford2-cmyk/Local-AI-Orchestrator) (v3 — historical)
 
 ---
 
