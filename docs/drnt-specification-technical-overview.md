@@ -2,7 +2,7 @@
 
 **Seven Interface Specifications + Three Governance Artifacts**
 
-*A Personal-Scale Proof of Concept for Local-First AI Orchestration*
+*A Personal-Scale Implementation of Local-First AI Orchestration*
 
 March 2026 • Lawrence Jeffords
 
@@ -73,7 +73,7 @@ The architecture has received external engagement beyond the adversarial review 
 
 ## What This Specification Suite Demonstrates
 
-The DRNT specifications are not a product. They are a proof of concept that the local-first AI orchestration pattern — described at the reference architecture level in "[Why You Cannot Depend on a Single AI Model](why-you-cannot-depend-on-a-single-ai-model.md)" — can be specified to enforcement depth.
+The DRNT specifications are not a product. They are an implementation of the local-first AI orchestration pattern — described at the reference architecture level in "[Why You Cannot Depend on a Single AI Model](why-you-cannot-depend-on-a-single-ai-model.md)" — can be specified to enforcement depth.
 
 Specifically, the suite demonstrates that:
 
