@@ -3,7 +3,7 @@
 **A Reference Architecture for Local-First AI Agent Orchestration**
 
 > **DRNT Architecture v6.0** | Canonical specification source
-> Implementation: [local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway) (v0.1.0)
+> Implementation: [local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway) (v0.2.1)
 > Supersedes: [Local-AI-Orchestrator](https://github.com/ljefford2-cmyk/Local-AI-Orchestrator) (v3 — historical)
 
 ---
@@ -57,7 +57,7 @@ The most significant convergent finding: all four reviewers independently identi
 
 The `specs/` and `governance/` directories contain the DRNT (Don't Reason, Navigate & Task) personal-scale implementation — seven interface specifications and three governance artifacts specified to enforcement depth.
 
-**Status:** All seven specifications implemented with 647 tests collected (629 passed, 18 skipped). Working implementation: [local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway).
+**Status:** All seven specifications implemented with 735 tests collected (717 passed, 18 skipped e2e). Working implementation: [local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway).
 
 | Directory | Artifact | Description |
 | --- | --- | --- |
