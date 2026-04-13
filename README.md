@@ -2,7 +2,7 @@
 
 **A Reference Architecture for Local-First AI Agent Orchestration**
 
-> **DRNT Architecture v6.0** | Canonical specification source
+> **DRNT Architecture v7.0** | Canonical specification source
 > Implementation: [local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway) (v0.2.1)
 > Supersedes: [Local-AI-Orchestrator](https://github.com/ljefford2-cmyk/Local-AI-Orchestrator) (v3 — historical)
 
@@ -57,17 +57,18 @@ The most significant convergent finding: all four reviewers independently identi
 
 The `specs/` and `governance/` directories contain the DRNT (Don't Reason, Navigate & Task) personal-scale implementation — seven interface specifications and three governance artifacts specified to enforcement depth.
 
-**Status:** All seven specifications implemented with 735 tests collected (717 passed, 18 skipped e2e). Working implementation: [local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway).
+**Status:** Conformance reference implementation: [local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway) (implements v7.0). The gateway is sized for single-operator validation on commodity hardware — it is the existence proof that this architecture is realizable, not a product. See the gateway's STATUS.md for per-claim conformance status and current test results.
 
 | Directory | Artifact | Description |
 | --- | --- | --- |
-| `specs/` | [Spec 1: Audit Event Schema](specs/DRNT_Spec1_Audit_Event_Schema.md) | Single event format for the append-only audit log. 20+ event types, SHA-256 hash chain, fail-closed guarantee. |
-| `specs/` | [Spec 2: Capability Model](specs/DRNT_Spec2_Capability_Model.md) | Capability registry mapping each WAL level to per-action gate policies. Promotion criteria, demotion triggers. |
-| `specs/` | [Spec 3: Context Boundary](specs/DRNT_Spec3_Context_Boundary.md) | Context Packager data structure, sensitivity classification, four-stage transform pipeline. |
+| `specs/` | [Spec 1: Audit/Event Schema](specs/DRNT_Spec1_Audit_Event_Schema.md) | Single event format for the append-only audit log. 20+ event types, SHA-256 hash chain, fail-closed guarantee. |
+| `specs/` | [Spec 2: Capability Model (WAL → Permissions)](specs/DRNT_Spec2_Capability_Model.md) | Capability registry mapping each WAL level to per-action gate policies. Promotion criteria, demotion triggers. |
+| `specs/` | [Spec 3: Context Boundary Specification](specs/DRNT_Spec3_Context_Boundary.md) | Context Packager data structure, sensitivity classification, four-stage transform pipeline. |
 | `specs/` | [Spec 4: Egress Policy Binding](specs/DRNT_Spec4_Egress_Policy.md) | Egress endpoint registry, 11-step gateway check sequence, Docker network topology enforcement. |
 | `specs/` | [Spec 5: Override Semantics](specs/DRNT_Spec5_Override_Semantics.md) | Four override types, successor job model, conditional demotion separating routing from infrastructure failures. |
 | `specs/` | [Spec 6: Silo Runtime Security](specs/DRNT_Spec6_Silo_Runtime_Security.md) | Three-layer enforcement model for worker agent execution. Skill lifecycle, worker egress proxy. |
 | `specs/` | [Spec 7: Signal Chain Resilience](specs/DRNT_Spec7_Signal_Chain_Resilience.md) | Device failure modes, health probe hysteresis, stale job recovery, offline decision replay, WAL temporal decay. |
+| — | Spec 8: Managed Build Workflow | Gateway-only process spec — governs build discipline for the conformance reference. Lives in the gateway repo. |
 | `governance/` | [Event Schema v2.0](governance/DRNT_Event_Schema.md) | Complete field-level reference for all event types. Companion to Spec 1. |
 | `governance/` | [Capability Trust Profile](governance/DRNT_Capability_Trust_Profile.md) | Trust lifecycle: ring buffer mechanics, promotion criteria, demotion rules. Companion to Spec 2. |
 | `governance/` | [NemoClaw Governance Overlay](governance/DRNT_NemoClaw_Governance_Overlay.md) | Maps DRNT governance to NVIDIA's NemoClaw/OpenShell ecosystem. |

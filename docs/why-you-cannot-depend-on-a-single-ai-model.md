@@ -4,7 +4,7 @@
 
 *A Reference Architecture for Local-First AI Agent Orchestration*
 
-v6.0 — March 2026
+v7.0 — April 2026
 
 Lawrence Jeffords
 
