@@ -73,10 +73,6 @@ The `specs/` and `governance/` directories contain the DRNT (Don't Reason, Navig
 | `governance/` | [Capability Trust Profile](governance/DRNT_Capability_Trust_Profile.md) | Trust lifecycle: ring buffer mechanics, promotion criteria, demotion rules. Companion to Spec 2. |
 | `governance/` | [NemoClaw Governance Overlay](governance/DRNT_NemoClaw_Governance_Overlay.md) | Maps DRNT governance to NVIDIA's NemoClaw/OpenShell ecosystem. |
 
-## External Engagement
-
-**NVIDIA NemoClaw Community.** RFC #442 (WAL Integration Profile for OpenShell) was submitted to the NemoClaw GitHub repository and triaged by an NVIDIA engineer. The [NemoClaw Governance Overlay](governance/DRNT_NemoClaw_Governance_Overlay.md) maps the DRNT trust model to the OpenShell ecosystem. The [WAL Integration Profile](WAL_Integration_Profile_OpenShell_v3.pdf) is included in this repository.
-
 ## License
 
 [MIT](LICENSE)
