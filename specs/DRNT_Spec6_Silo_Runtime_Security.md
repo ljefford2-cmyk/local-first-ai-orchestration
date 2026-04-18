@@ -469,6 +469,102 @@ In addition to existing startup validation (Specs 2, 4):
 
 *Validation failures prevent agent type registration. Unregistered agent types cannot receive dispatched work.*
 
+## 11A. v0.2 Implementation Status
+
+This section reconciles the Spec 6 design surface against the v0.2.1 reference implementation in the `drnt-project` repository. It is a real-code audit, not a forward-looking commitment. Status terms follow the project's `STATUS.md` definitions: **Implemented** (code exists, wired, tested), **Partial** (code exists with documented gaps), **Aspirational** (described here, not yet built).
+
+### 11A.1 Three Enforcement Layers (Section 2)
+
+| Layer | Status | Notes |
+| --- | --- | --- |
+| Layer 1 — Runtime Isolation | Implemented | Docker container per worker. `cap_drop: ["ALL"]`, `read_only: true`, `no-new-privileges`, `network_mode: "none"` (default), tmpfs-only writable, image registry, mem/pids/wall-timeout caps. Enforcement is on the `worker-proxy` HTTP boundary via Pydantic validators (`worker-proxy/models.py`) backed by `config/worker-proxy-registry.json`. |
+| Layer 2 — Behavioral Governance | Implemented | Spec 2 capability registry, WAL state machine, `permission_checker.py`, `demotion_engine.py`, `promotion_monitor.py`. Worker agent types are not capabilities — the governing capability owns the WAL context, per Section 6.4. |
+| Layer 3 — Structural Privacy (cloud path) | Implemented | Full Spec 3/Spec 4 pipeline: `context_packager.py` + `egress_proxy.py` + egress gateway. |
+| Layer 3 — Structural Privacy (worker egress path) | Aspirational | The request sanitizer described in Section 3.4 is not implemented in v0.2. Worker containers default to `network_mode: "none"`, which removes the path the sanitizer would inspect. v0.2 mitigates the risk by closing the path, not by inspecting it. |
+
+### 11A.2 Silo Network Architecture (Section 3)
+
+| Segment | Spec 6 Status | v0.2 Reality |
+| --- | --- | --- |
+| `drnt-internal` | Implemented | `docker-compose.yml`. Carries orchestrator ↔ audit ↔ worker-proxy ↔ ollama ↔ egress-gateway. |
+| `drnt-external` | Implemented (Spec 4) | Egress gateway and ollama only. Orchestrator is not on this segment. |
+| `drnt-worker` | Aspirational | Not separated in v0.2. Worker containers run with `network_mode: "none"` rather than on a dedicated segment. |
+| `drnt-bus` | Aspirational | L1↔worker IPC is file-based (inbox/outbox JSON via shared sandbox volume), not a bus. No message-bus container exists. |
+| `drnt-tailscale` | Aspirational | Not in v0.2. |
+| `drnt-gateway` | Aspirational as a separate segment | Egress gateway sits on `drnt-external` directly. |
+
+The worker egress proxy described in Section 3.3 is also aspirational. The `worker-proxy` service in v0.2 is a Docker-socket sidecar that brokers container lifecycle calls — it is not the request-level outbound HTTP proxy described by Spec 6. The two share a name but solve different problems. Section 3.4's request sanitizer, which depends on the worker egress proxy, is also not implemented.
+
+### 11A.3 Agent Runtime Manifests (Section 4)
+
+| Element | Status | Evidence |
+| --- | --- | --- |
+| Manifest dataclass | Implemented | `orchestrator/runtime_manifest.py` — `RuntimeManifest`, `VolumeMount`, `NetworkPolicy`, `ResourceLimits`, `SecurityPolicy`. |
+| Manifest validator | Implemented | `orchestrator/manifest_validator.py`. |
+| Manifest enforcement at sandbox creation | Implemented | `orchestrator/blueprint_engine.py` translates manifest → `SandboxBlueprint`. v0.2 Phase 2B (commit `72fb249`) wires `mem_limit`, `pids_limit`, and `tmpfs` from blueprint into the executor request body so the values reach Docker rather than silently defaulting at the executor. |
+| Manifest immutability during execution | Implemented | Blueprint is constructed before container creation; container is one-shot and recreated per job. |
+| Schema field naming | Diverges from Spec 6 | The v0.2 manifest is keyed on `capability_id` and `worker_type` rather than `agent_type_id`. `network.egress_allow` plays the role of `network_egress.allowed_endpoints`. The `cloud_dispatch_dependencies` field is not present — cloud routing is governed by the capability registry. |
+| `binaries.allowed/blocked` | Aspirational | No binary allowlist enforcement in v0.2. The worker image entrypoint is fixed and `read_only: true` prevents installation. |
+| `skills.required/optional/blocked_categories` | Aspirational | No skill subsystem in v0.2 (see 11A.5). |
+
+### 11A.4 Sandbox Blueprints (Section 5)
+
+| Element | Status | Notes |
+| --- | --- | --- |
+| Blueprint dataclass + engine | Implemented | `orchestrator/sandbox_blueprint.py`, `orchestrator/blueprint_engine.py`. |
+| Single v1 blueprint | Implemented | Conceptually `drnt-worker:latest` only. There is no on-disk blueprint catalog under `/var/drnt/config/blueprints/`; the blueprint is constructed in-process from manifest + defaults. |
+| Resource ceilings | Implemented (v0.2 Phase 2B, commit `578adde`) | `config/worker-proxy-registry.json` declares `caps.mem_limit_max`, `caps.pids_limit_max`, `caps.wall_timeout_max`. Worker-proxy rejects requests exceeding caps with HTTP 422 before the Docker socket is touched. |
+| `isolation.landlock` | Aspirational | Landlock not configured in v0.2. |
+| `isolation.seccomp_profile` | **Partial — broken** | `config/seccomp-default.json` exists. The orchestrator loads its full content at startup and threads the JSON string through to Docker's `security_opt=["seccomp=<content>"]`. Docker expects a *path* in that argument, not the profile body. Net effect: the seccomp filter is not applied to worker containers in v0.2. Tracked as a v0.2 known issue (see project `STATUS.md`). |
+| `isolation.dropped_capabilities: ["ALL"]` | Implemented | Enforced by worker-proxy validator (`cap_drop` must contain `"ALL"`). |
+| `isolation.added_capabilities: []` | Implemented | `cap_add` is in the deferred-fields set on the worker-proxy HTTP model and is rejected by `extra="forbid"`. |
+| `network_template.proxy` | Aspirational | No worker egress proxy in v0.2. |
+| `network_template.sanitizer` | Aspirational | No request sanitizer in v0.2. |
+
+### 11A.5 Skill Lifecycle (Section 6)
+
+Aspirational across the board for v0.2. There is no skill registry, no skill permission manifest, no sandbox upload tool, and no operator verification checklist enforcement. Worker images are built and shipped by the operator out-of-band; no third-party code path enters the silo in v0.2. The trust ownership model (Section 6.4) is honored implicitly because no skills exist — worker quality failures already attribute to the governing capability through the existing audit-event capability_id.
+
+### 11A.6 Worker Egress Audit Events (Section 7)
+
+| Spec 6 Event | v0.2 Implementation |
+| --- | --- |
+| `worker.egress_request` | Not emitted. Closest analog is `egress.authorized` (Spec 4 path), emitted by `orchestrator/egress_events.py` for cloud dispatch only. |
+| `worker.egress_blocked` | Not emitted. Closest analog is `egress.denied` for cloud dispatch. |
+| `worker.sandbox_violation` | Not emitted. The worker-proxy rejects malformed requests with HTTP 422 before the container is created; v0.2 has no runtime sandbox-violation detector inside the container. |
+| Schema version 1.5 → 1.6 bump | Not applicable. The v0.2 audit envelope uses `schema_version: "2.0"` (`audit-log-writer/src/event_validator.py`). DRNT moved to its own schema versioning track and is not aligned with the Spec 6 document version numbers. |
+| `source` enum extension (`worker_egress_proxy`, `sandbox_runtime`) | Not applicable in v0.2. The v0.2 audit envelope does not enforce a closed `source` enum at the writer; sources used today include `egress_proxy`, `audit_log_writer`, `orchestrator`, etc. |
+
+### 11A.7 Operator TUI (Section 8)
+
+Aspirational. v0.2 has no operator TUI. Approval flow does not exist because no surface generates `worker.egress_blocked` events to approve. Override authority (Spec 5) is exercised via the orchestrator's HTTP API.
+
+### 11A.8 L2 Exit Audit Interaction (Section 10)
+
+Aspirational. There is no L2 service in v0.2. Spec 1's audit log is the integrity surface; downstream classification of integrity-significant vs. advisory events is not implemented.
+
+### 11A.9 Startup Validation (Section 11)
+
+| Check | Status | Evidence |
+| --- | --- | --- |
+| Manifest validity | Implemented | `manifest_validator.py` invoked during `worker_lifecycle.prepare_worker()`. |
+| Sandbox environment posture | Implemented | `orchestrator/startup_validator.py` — sandbox base directory, seccomp profile readable, worker-proxy reachable. Fail-closed on critical checks. |
+| Egress posture | Implemented | `startup_validator.py` — `egress.json` validity, secrets readable. |
+| Audit integrity | Implemented | `startup_validator.py` — audit socket reachable, today's chain readable, hash chain verifies from genesis. |
+| Blueprint catalog validity | Not applicable | Blueprint is in-process, not file-backed in v0.2. |
+| Skill permission consistency | Not applicable | No skills in v0.2. |
+| Worker egress proxy operational | Not applicable | No worker egress proxy in v0.2. |
+| `cloud_dispatch_dependencies` registered | Not applicable | Field not present in v0.2 manifest. |
+| Bus operational on `drnt-bus` | Not applicable | No bus in v0.2. |
+
+### 11A.10 v0.2 Posture Summary
+
+The v0.2 implementation realizes the spec's Layer 1 (runtime isolation) end-to-end on the worker-execution path, with default-deny enforced on a dedicated HTTP boundary (`worker-proxy`) backed by a registry file. The orchestrator no longer holds the Docker socket. Layer 2 (behavioral governance) is fully realized through Specs 2 and 5. Layer 3 is realized for the cloud-dispatch path (Specs 3 and 4); the worker-execution structural-privacy path described in Sections 3.3 and 3.4 is intentionally deferred — v0.2 closes the path with `network_mode: "none"` rather than inspecting it with a sanitizer.
+
+The worker egress proxy, request sanitizer, dedicated `drnt-worker` and `drnt-bus` segments, skill lifecycle, operator TUI, L2 exit audit, and the `worker.*` event family are out of scope for v0.2 and remain on the v0.3+ track. The seccomp path-vs-content bug is the one known regression against the as-claimed Layer 1 surface and is tracked in `STATUS.md`.
+
+---
+
 ## 12. V1 Scope
 
 ### 12.1 In V1
