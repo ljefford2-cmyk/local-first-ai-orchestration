@@ -41,6 +41,7 @@ The boundary is not between reasoning and not-reasoning. It is between reasoning
 | [Why You Cannot Depend on a Single AI Model](docs/why-you-cannot-depend-on-a-single-ai-model.md) | Full reference architecture. The six friction points of single-model deployment, the local orchestrator pattern, Context Packager, Execution Safety Layer, WAL governance, audit log, multi-model dispatch, validation methodology. |
 | [DRNT Specification Technical Overview](docs/drnt-specification-technical-overview.md) | Concise technical summary of the seven DRNT interface specifications and three governance artifacts. Key architectural decisions and adversarial review methodology. |
 | [Lightweight Evaluation Loop](docs/lightweight-evaluation-loop.md) | Personal-scale quality feedback — how deployments with high question diversity and low repetition capture improvement signals without formal test suites. |
+| [ADR-001: Project Identity](docs/adr/ADR-001-project-identity.md) | Project identity decision — DRNT as a governed AI-agent gateway and orchestration architecture. Reference architecture is domain-agnostic; current reference implementation is the personal-scale Desktop Hub. |
 
 ## Validation
 
