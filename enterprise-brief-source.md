@@ -2,11 +2,9 @@
 
 **Executive Brief: Local Governance Hub for Models, Agents, and Enterprise Data Access**
 
-*Prepared for senior leadership review — April 2026*
-
 ## Executive Summary
 
-This architecture creates a governed enterprise AI control plane: a local orchestration hub receives user intent, classifies the work, retrieves or packages only the data needed, routes the task to the proper internal system, specialized agent, local model, or frontier model, and returns the result through the right user interface for the job context.
+This architecture proposes to create a governed enterprise AI control plane: a local orchestration hub receives user intent, classifies the work, retrieves or packages only the data needed, routes the task to the proper internal system, specialized agent, local model, or frontier model, and returns the result through the right user interface for the job context.
 
 Its purpose is not to let autonomous agents roam the enterprise. Its purpose is to make AI useful while keeping authority, evidence, data boundaries, and human accountability intact.
 
