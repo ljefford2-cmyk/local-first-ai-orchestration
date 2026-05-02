@@ -38,8 +38,8 @@ The boundary is not between reasoning and not-reasoning. It is between reasoning
 
 | Document | Description |
 | --- | --- |
-| [Repository Purpose](repository-purpose.md) — what this orchestration layer is and what it is not. General framing, audience-neutral.
-| [Enterprise Brief](enterprise-brief.md) — executive-level brief on the enterprise application of this architecture. DRNT (the implementation referenced from this repo) is the personal-scale instance of the same pattern.
+| [Repository Purpose](repository-purpose.md) | what this orchestration layer is and what it is not. General framing, audience-neutral.
+| [Enterprise Brief](enterprise-brief.md) | executive-level brief on the enterprise application of this architecture. DRNT (the implementation referenced from this repo) is the personal-scale instance of the same pattern.
 | [Why You Cannot Depend on a Single AI Model](docs/why-you-cannot-depend-on-a-single-ai-model.md) | Full reference architecture. The six friction points of single-model deployment, the local orchestrator pattern, Context Packager, Execution Safety Layer, WAL governance, audit log, multi-model dispatch, validation methodology. |
 | [DRNT Specification Technical Overview](docs/drnt-specification-technical-overview.md) | Concise technical summary of the seven DRNT interface specifications and three governance artifacts. Key architectural decisions and adversarial review methodology. |
 | [Lightweight Evaluation Loop](docs/lightweight-evaluation-loop.md) | Personal-scale quality feedback — how deployments with high question diversity and low repetition capture improvement signals without formal test suites. |
