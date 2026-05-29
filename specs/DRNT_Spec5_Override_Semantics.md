@@ -33,6 +33,10 @@ Successor (J2, parent: J1, route.cloud.openai):
   → model.response → job.delivered → human.reviewed
 ```
 
+**Successor classification is human-directed.** A successor's governing capability is selected by the human's `redirect` or `escalate` decision, not assigned by the local classifier. The successor still emits its own `job.classified` to preserve the one-job-one-governing-capability invariant, but that event records a human routing decision, not classifier judgment; any confidence value it carries does not denote classifier certainty.
+
+This provenance is recoverable from the audit chain rather than represented as a distinct field in the `job.classified` payload. The successor's envelope carries `parent_job_id` back to the original, and the originating decision is durable in the associated `human.override` (`redirect`/`escalate`); on the post-delivery supersede path the original's `job.revoked` also carries `successor_job_id`. Joining on this lineage reconstructs that the governing capability was human-selected. Per Spec 2 Section 9.5, that confidence is audit/proposal metadata, never a WAL trust input.
+
 ## 4. Three Terminal States
 
 - **`job.delivered`:** execution succeeded. Result presented.

@@ -290,6 +290,14 @@ score = sum(weights) / len(evaluable_outcomes)
 - Human reviews. Edits `desired_wal_level` in `capabilities.json`. Restarts.
 - Startup reconciliation emits durable `wal.promoted`, sets effective = desired after ACK.
 
+### 9.5 Confidence Is Not a Trust Input (Standing Doctrine)
+
+Confidence values recorded on `job.classified` — whether classifier-derived, a fallback default, or carried on a human-directed redirect/escalate successor (Spec 5 Section 3) — are audit and proposal metadata only. They describe a classification decision; they are not a measure of earned trust.
+
+WAL promotion and demotion are driven solely by behavioral evidence: evaluable-outcome dispositions and the approval score (Sections 9.1–9.2), recent-failure counts, cancel/redirect overrides, strip failures, model changes, incident counts (Section 10, Section 6.4), and activity-window decay (Spec 7 Section 9). Confidence is not among these inputs.
+
+This exclusion is doctrine, not configuration. There is no defined entry point for confidence in the promotion criteria (Section 9.1) or the approval-score formula (Section 9.2), and none may be added without an explicit doctrine change.
+
 ## 10. Demotion Rules
 
 ### 10.1 Automatic Triggers
