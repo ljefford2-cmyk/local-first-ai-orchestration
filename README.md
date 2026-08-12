@@ -87,6 +87,7 @@ See the **[DRNT Authority Map](docs/architecture/DRNT_Authority_Map.md)** before
 |---|---|
 | [`publications/`](publications/) | Controlled volumes, public papers, enterprise doctrine, synthetic fixture, and repository text transcriptions grounded in the supplied source artifacts. |
 | [`docs/architecture/`](docs/architecture/) | Authority map, three-volume overview, and implementation-facing system maps. |
+| [`docs/history/`](docs/history/) | Guided reading of how the earlier DRNT framing developed into the controlled three-volume architecture. |
 | [`specs/`](specs/) | DRNT interface and control specifications. |
 | [`governance/`](governance/) | Event, trust, sandbox, and governance overlays. |
 | [`validation/`](validation/) | Adversarial review methods and validation material. |
