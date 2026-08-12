@@ -1,127 +1,98 @@
 # Repository Purpose
 
-This project is not a chatbot, not an autonomous-agent platform, and not a replacement for professional judgment.
+This repository develops and preserves a governance architecture for organizations whose consequential work is increasingly mediated by AI models, agents, controllers, software, human decision-makers, legacy systems, external services, and physical processes.
 
-It is a **controlled AI orchestration layer** designed to sit between users, enterprise systems, specialized agents, local models, and cloud AI models.
+Its purpose is:
 
-Its purpose is to put the right information in front of the right professional at the right moment, in the right format, while preserving human authority, enterprise data boundaries, auditability, and operational control.
+> **Create a governance framework that enables diverse AI systems to operate together in a more useful, trustworthy, and accountable manner.**
 
-The system helps professionals make better decisions by combining:
+It is not a chatbot project, an autonomous-agent platform, a claim that one product governs an enterprise, or a replacement for professional judgment. It is the architecture for defining what the organization claims, determining what authority applies, connecting those requirements to the enterprise that actually exists, independently evaluating what the evidence supports, and changing the organization only through accountable, versioned governance.
 
-- validated calculations
-- role-specific context
-- legacy-system data
-- location, asset, or case history
-- inspection and event records
-- policy and procedure constraints
-- model-assisted analysis
-- human approval and override
-- durable after-action records
+## The governed object
 
-The AI does not decide what to do.
-The AI prepares the evidence package.
-The professional decides.
-The organization learns from the outcome.
+The governed object is not the model or agent by default. It is the **claim-relevant organizational system**.
 
-## The Problem
+A consequential claim may depend on:
 
-Modern organizations have the information needed to make better decisions, but that information is often scattered across legacy systems, databases, documents, inspection records, work orders, spreadsheets, field notes, ticketing systems, and human experience.
+- people and professional roles;
+- authority sources, delegations, limits, expiration, and revocation;
+- information sources, context, transformations, identity, and time;
+- models, agents, deterministic logic, controllers, routing, and gates;
+- credentials, interfaces, legacy systems, vendors, and external organizations;
+- execution paths, physical processes, acknowledgments, and external effects;
+- evidence custody, reconstruction, independent observation, and evaluation; and
+- findings, measures, incentives, oversight, and governed change.
 
-At the same time, cloud AI models are powerful but cannot be trusted as uncontrolled decision-makers in safety-critical or operationally sensitive environments.
+A component belongs inside the governed boundary whenever its credible failure, omission, unmodeled behavior, or authority could change the truth, scope, or defensibility of the claim. A material dependency left outside the boundary becomes an explicit assumption; it does not disappear.
 
-A direct connection between users and cloud AI creates several risks:
+## The repository's four functions
 
-- sensitive data may leave the organization unnecessarily
-- model behavior may change after provider updates
-- answers may lack source traceability
-- agents may gain authority they have not earned
-- legacy context may be misunderstood
-- human accountability may become blurred
-- technically correct answers may become operationally wrong
+### 1. Define reality
 
-This project addresses that gap.
+The repository specifies how an organization governs the exact claim for which it seeks justified reliance. That includes the claim's purpose, boundary, assumptions, authority, consequence classification, measures and measurands, intended external effects, declared operating model, effective period, versions, and lifecycle.
 
-It creates a governed layer that routes, governs, and tasks before reasoning.
+### 2. Evaluate reality
 
-## The Core Idea
+It specifies how the organization independently determines what happened, whether runtime-maintained assumptions remained valid, whether intervention remained possible before consequence, whether execution and external effect occurred, what the evidence permits the organization to claim, and whether the declared operating model remains appropriate.
 
-Before any model reasons, the system asks:
+### 3. Connect reality
 
-- Who is the user?
-- What role are they acting in?
-- What are they trying to do?
-- What data is needed?
-- What data is allowed to leave the local environment?
-- Which system, model, calculator, or agent should handle the task?
-- Is the result advisory, draft-only, approval-gated, or blocked?
-- What evidence supports the answer?
-- What should be recorded after the human acts?
+It specifies how those assurance requirements reach the heterogeneous as-built and as-operated enterprise through complete claim-relevant capability paths. APIs, databases, event streams, UI/computer-use mechanisms, professional judgment, human reporting, physical observation, offline systems, external organizations, and hybrid paths can all participate when they are appropriately bounded, qualified, observable, reconstructable, and challengeable.
 
-This is the difference between using AI as a standalone answer machine and using AI as a governed operational intelligence layer.
+### 4. Govern learning
 
-## What This System Does
+It specifies how discrepancies, findings, overrides, effect failures, evidence limitations, recurring seams, evaluator-health signals, and operational history can produce organizational learning without becoming autonomous self-modification. Evidence may motivate change. It does not enact change. A proposed change must be evaluated, validated where appropriate, authorized, versioned, deployed, observed, and tested for actual effectiveness.
 
-The orchestration layer can:
+## The operating discipline
 
-- classify user intent
-- apply policy and permission gates
-- retrieve data from approved sources
-- package only the minimum necessary context
-- route tasks to local models, deterministic calculators, specialized agents, or cloud models
-- preserve source provenance
-- enforce human approval where required
-- record model outputs, routing decisions, overrides, failures, and outcomes
-- support mobile, desktop, tablet, and field-device workflows
-- allow trust to increase or decrease based on actual performance
+The architecture keeps distinctions that are often collapsed:
 
-The architecture is especially useful in environments where professionals need fast, situation-specific context but where the AI must not be allowed to act independently.
+- mission is not claim;
+- purpose is not authority;
+- authority is not evidence;
+- model output is not organizational action;
+- action is not external effect;
+- execution evidence is not effect evidence;
+- technical qualification is not organizational authorization;
+- repeated practice is not legitimacy;
+- observation is not evaluation;
+- evaluation is not authorization;
+- a finding is not remediation;
+- remediation is not technical closure; and
+- learning is not permission to rewrite the system.
 
-## What This System Is Not
+These distinctions are not semantic refinements. They prevent capability, confidence, workflow completion, management approval, or accumulated evidence from being promoted into a stronger claim than the evidence supports.
 
-This system is not intended to let autonomous agents roam freely through enterprise systems.
+## Professional augmentation
 
-It is not intended to replace expert judgment.
+The architecture is designed to improve professional judgment rather than quietly displace it. A governed system should deliver the right authorized information, applicable rule, current condition, operating history, uncertainty, limitations, and available options to the function legitimately responsible for the decision.
 
-It is not intended to send unrestricted enterprise context to cloud models.
+Meaningful human involvement requires adequate and comprehensible information, valid authority, sufficient time, and a practical ability to reject, alter, stop, redirect, delay, or escalate before the relevant consequence becomes irreversible. Where a low-consequence, reversible capability has been validly preauthorized and demonstrated, bounded machine-speed operation may be appropriate. A ceremonial approval click is not a control.
 
-It is not intended to treat all users, roles, devices, tasks, or data as equivalent.
+## DRNT's role
 
-It is not intended to hide uncertainty behind fluent AI responses.
+DRNT — Don't Reason, Navigate & Task — is the originating implementation architecture and first intended realization. It places routing, policy, capability, context, credential, containment, receipt, and override controls before or around execution. Open-ended reasoning may assist inside a bounded task; it does not substitute for authority, policy, containment, or verification.
 
-The system is built around bounded authority, traceable evidence, controlled data movement, human accountability, and continuous learning.
+The repository contains both the broader three-volume organizational architecture and the DRNT technical specifications that can instantiate parts of it. These are related but not interchangeable.
 
-## Example: A Field Professional Evaluating a Recurring Issue
+## Evidence discipline
 
-Consider a qualified professional in any operationally complex domain — infrastructure, utilities, clinical care, environmental monitoring, industrial maintenance — facing a situation that requires both immediate action and institutional context.
+No person or machine is authorized to certify its own correctness merely by producing or controlling the evidence. Evidence may originate inside the evaluated system, but its validity must remain independently defensible relative to the claim.
 
-The system can calculate the best technically supported solution, retrieve the history of the location, asset, or case, surface prior interventions and their outcomes, show repeated observations or inspections, and present that information in a format usable at the point of decision.
+Claims about the running personal testbed are controlled by the separate `local-first-ai-gateway` repository, its code, tests, receipts, and current `STATUS.md`. This repository controls what the architecture requires. It does not convert architectural prose into implementation fact.
 
-But the AI does not decide the action.
+## Intended outcome
 
-The professional decides what to do based on the calculation, the history, the field condition, the applicable rules, and their own expertise.
+Success is not the number of agents deployed, the percentage of work automated, or the confidence of a model response.
 
-The system then records what was done, why it was done, who approved it, what data supported the decision, and what subsequent observations showed.
+Success is that the organization:
 
-That record becomes organizational memory for supervisors, engineers, specialists, researchers, and future decision support.
-
-## Why This Matters
-
-The largest safety and performance gains from AI will not come from replacing professionals.
-
-They will come from giving professionals better situational awareness at the moment of decision.
-
-This architecture makes that possible by connecting fragmented enterprise knowledge to controlled AI capability without surrendering authority to the model.
-
-The goal is:
-
-Right professional.
-Right evidence.
-Right calculation.
-Right history.
-Right format.
-Right moment.
-Right authority boundary.
-
-## Design Principle
-
-**AI informs. Professionals decide. The organization learns.**
+- sees relevant conditions sooner;
+- routes evidence to the right function;
+- acts inside valid, bounded authority;
+- preserves meaningful professional judgment;
+- reconstructs what actually occurred;
+- verifies whether the intended effect happened;
+- detects recurrence, drift, common-mode failure, and organizational seams;
+- learns from accumulated operational reality; and
+- improves deliberately without surrendering control over its own correctness.
