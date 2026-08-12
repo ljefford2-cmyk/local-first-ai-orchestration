@@ -22,6 +22,8 @@ This directory contains the current public and controlled writing corpus for the
 
 The [`Publication Manifest`](MANIFEST.md) records source identities, statuses, hashes, and known naming/version notes.
 
+For a conceptual reading path from the earlier local-orchestrator framing through the supporting papers and into the controlled volumes, see the [Design Evolution Reading Guide](../docs/history/design-evolution.md).
+
 ## Reading discipline
 
 The corpus distinguishes three questions that must not collapse:
