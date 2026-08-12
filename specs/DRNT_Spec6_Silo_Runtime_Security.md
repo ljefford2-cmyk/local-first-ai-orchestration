@@ -469,9 +469,9 @@ In addition to existing startup validation (Specs 2, 4):
 
 *Validation failures prevent agent type registration. Unregistered agent types cannot receive dispatched work.*
 
-## 11A. v0.2 Implementation Status
+## 11A. Historical v0.2.1 Implementation Snapshot
 
-This section reconciles the Spec 6 design surface against the v0.2.1 reference implementation in the `drnt-project` repository. It is a real-code audit, not a forward-looking commitment. Status terms follow the project's `STATUS.md` definitions: **Implemented** (code exists, wired, tested), **Partial** (code exists with documented gaps), **Aspirational** (described here, not yet built).
+This section preserves a dated reconciliation of the Spec 6 design surface against the v0.2.1 gateway state audited in April 2026. It is historical evidence, not current implementation status and not a forward-looking commitment. The implementation subsequently changed, including its worker-network topology. For current claims, use the code, tests, receipts, observed behavior, and [`STATUS.md`](https://github.com/ljefford2-cmyk/local-first-ai-gateway/blob/main/STATUS.md) in the `local-first-ai-gateway` repository. Status terms below retain the historical audit's definitions: **Implemented** (code existed, was wired, and was tested at the audited state), **Partial** (code existed with documented gaps or incomplete wiring), and **Aspirational** (described here but not built at that state).
 
 ### 11A.1 Three Enforcement Layers (Section 2)
 
