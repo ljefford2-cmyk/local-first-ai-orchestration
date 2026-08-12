@@ -107,6 +107,14 @@ This repository is the architectural authority and principal design corpus. Rela
 
 The relationship is deliberate: this repository defines the architecture; the gateway tests selected primitives at personal scale; the federal and domain repositories challenge or apply the design in bounded fixtures; and the historical repository preserves the path that exposed the need for specialist security and sandboxing support.
 
+## Join the discussion
+
+The architecture is open for critique from operators, engineers, security practitioners, auditors, assurance professionals, governance teams, and others responsible for consequential AI-mediated work.
+
+**[How should organizations govern the system around AI agents—not just the agent?](https://github.com/ljefford2-cmyk/local-first-ai-orchestration/discussions/6)** introduces the Define Reality, Evaluate Reality, and Connect Reality architecture and asks where its assumptions, boundaries, independence requirements, or operating model fail in practice.
+
+The author participates as an independent end-user and operator. There is no product or service being offered, and the repository does not represent an employer, vendor, standards body, or other organization. Before contributing examples or proposed changes, read the [feedback and contribution guidance](CONTRIBUTING.md).
+
 ## What this repository does not claim
 
 It does not claim a complete commercial product, enterprise deployment, federal deployment, universal visibility, perfect independence, prevention of every failure, universal preventive intervention, perfect reconstruction, zero residual risk, maximum automation, or replacement of professional judgment and accountable institutional authority.
