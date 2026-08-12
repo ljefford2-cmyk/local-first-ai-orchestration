@@ -1,87 +1,108 @@
-# Why You Cannot Depend on a Single AI Model
+# Governed AI Orchestration
 
-**A Reference Architecture for Local-First AI Agent Orchestration**
+**Define reality. Evaluate reality. Connect reality.**
 
-> **DRNT Architecture v7.0** | Canonical specification source
-> Implementation: [local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway) (v0.2.1)
-> Supersedes: [Local-AI-Orchestrator](https://github.com/ljefford2-cmyk/Local-AI-Orchestrator) (v3 — historical)
+This repository is the architecture, governance, and publication corpus for DRNT — **Don't Reason, Navigate & Task** — and the broader three-volume architecture for governed AI-mediated organizations.
 
----
+The central premise is simple:
 
-## What This Is
+> **The AI agent is not the organizational system.**
 
-A design pattern for placing a local AI model between users and cloud frontier models. The local model holds personal context, preferences, and memory. It decides what stays local, what goes to the cloud, and how to package what goes. Cloud models handle complex reasoning. The user retains decision authority.
+A model or agent can complete its assigned task correctly while the organization still fails because the wrong information was used, authority was invalid, a control was bypassed, the action reached the wrong target, the intended external effect did not occur, or the available evidence cannot independently establish what happened.
 
-This is a reference architecture — technology-stack-agnostic, domain-agnostic, and not a product. It was designed and stress-tested across multiple implementation domains and specified to enforcement depth in the DRNT personal AI gateway.
+The governed object is therefore the **claim-relevant organizational system**: the people, authority, information, controls, workflows, models, agents, software, legacy systems, credentials, physical processes, external dependencies, effects, evidence, evaluators, and change mechanisms needed to support the exact claim being made.
 
-## Core Principle
+## Current controlled architecture
 
-**Know what you have. Package what you need.**
+The August 2026 corpus is governed in this order:
 
-The local model reasons about two things: *Do I already have this?* And if not, *what does the cloud need to see?*
+1. **[Project Plan v0.2 — Frozen Architectural Baseline](publications/controlled-architecture/Project_Plan_v0.2_Frozen_Architectural_Baseline.md)** controls corpus-level architecture, terminology, volume allocation, claim states, baseline machinery, and change classification.
+2. **[Volume 1 — Define Reality](publications/controlled-architecture/Volume_1_Define_Reality_Final_Controlled_Manuscript.md)** defines the governed target: claim, purpose, boundary, assumptions, authority, consequence, measures, intended effects, and the Declared Organizational Operating Model.
+3. **[Volume 2 — Evaluate Reality](publications/controlled-architecture/Volume_2_Evaluate_Reality_Final_Controlled_Manuscript.md)** defines independent operational assurance and governed organizational learning.
+4. **[Volume 3 — Connect Reality](publications/controlled-architecture/Volume_3_Connect_Reality_Final_Controlled_Manuscript.md)** defines governed integration and continuing qualification of complete claim-relevant capability paths across the as-built and as-operated enterprise.
 
-The first question is retrieval. If the answer is in local context, the request never leaves the local perimeter — no cloud call, no token spend, no privacy exposure. The second question is packaging. When cloud escalation is needed, the local model assembles the tightest possible payload: right context, stripped of what's sensitive, framed to get a good answer on the first pass.
+The complete publication set, source identities, hashes, and version notes are recorded in the **[Publication Manifest](publications/MANIFEST.md)**.
 
-The boundary is not between reasoning and not-reasoning. It is between reasoning where errors are recoverable and reasoning where errors are consequential. The local model gets a reasoning budget proportional to how cheaply its mistakes can be corrected.
+## The three-volume architecture at a glance
 
-## Key Components
+| Volume | Governing question | Owned function |
+|---|---|---|
+| **Volume 1 — Define Reality** | What exactly is the governed organizational reality? | Claims, boundary, assumptions, purpose, authority, consequence, measurands, intended effects, declared model, versions, and handoff. |
+| **Volume 2 — Evaluate Reality** | What happened, what does the evidence support, and does the operating model remain appropriate? | Independent Observation, Runtime Control relationships, Independent Evaluation, effect verification, claim states, findings, baselines, evaluator governance, Loop 2 learning, and governed change. |
+| **Volume 3 — Connect Reality** | How can the assurance burden reach the enterprise that actually exists? | Discovery, complete capability paths, requirement-relative qualification, capability results, Graduated Integration, runtime envelopes, continuing qualification, degradation, requalification, and heterogeneous integration. |
 
-| Component | Purpose |
-| --- | --- |
-| **Context Packager** | Structural privacy gate and prompt engineer. All outbound data passes through it. Sensitive data is stripped by rule, not by judgment. Default is deny. |
-| **Execution Safety Layer** | Governs what happens when a decision becomes an action. Runtime isolation at the container level, behavioral governance via WAL, structural privacy on all outbound paths. No layer trusts another layer's enforcement. |
-| **Workflow Autonomy Levels (WAL 0–3)** | Graduated trust. Every capability starts at WAL-0 (recommend only). Promotion requires demonstrated reliability. Anomalies trigger automatic demotion. Trust decays with inactivity. |
-| **Append-Only Audit Log** | Every routing decision, packaging decision, model response, and human decision is logged in a cryptographically chained journal. Non-optional. The log writer is a separate process — if it is down, the orchestrator halts. |
-| **Multi-Model Dispatch** | Route different task types to different cloud models based on measured strengths. Vendor independence is architectural: model swap target is less than 24 hours. |
+These volume numbers are **not** the same thing as DRNT's implementation-layer labels. Volume 1 is not the L1 router; Volume 2 is not merely an L2 model; and Volume 3 is not a roaming-agent layer. See the **[Three-Volume Architecture Overview](docs/architecture/Three_Volume_Architecture_Overview.md)**.
 
-## Documents
+## Public entry point
 
-| Document | Description |
-| --- | --- |
-| [Repository Purpose](repository-purpose.md) | what this orchestration layer is and what it is not. General framing, audience-neutral.
-| [Enterprise Brief](enterprise-brief.md) | executive-level brief on the enterprise application of this architecture. DRNT (the implementation referenced from this repo) is the personal-scale instance of the same pattern.
-| [Why You Cannot Depend on a Single AI Model](docs/why-you-cannot-depend-on-a-single-ai-model.md) | Full reference architecture. The six friction points of single-model deployment, the local orchestrator pattern, Context Packager, Execution Safety Layer, WAL governance, audit log, multi-model dispatch, validation methodology. |
-| [DRNT Specification Technical Overview](docs/drnt-specification-technical-overview.md) | Concise technical summary of the seven DRNT interface specifications and three governance artifacts. Key architectural decisions and adversarial review methodology. |
-| [Lightweight Evaluation Loop](docs/lightweight-evaluation-loop.md) | Personal-scale quality feedback — how deployments with high question diversity and low repetition capture improvement signals without formal test suites. |
-| [ADR-001: Project Identity](docs/adr/ADR-001-project-identity.md) | Project identity decision — DRNT as a governed AI-agent gateway and orchestration architecture. Reference architecture is domain-agnostic; current reference implementation is the personal-scale Desktop Hub. |
+**[AI Orchestration Governance: The Agent Is Not the System](publications/foundation/AI_Orchestration_Governance_The_Agent_Is_Not_The_System.md)** is the public conceptual entry point. It explains the practical proposition behind the controlled volumes:
 
-## Validation
+- automation is supporting machinery, not the mission;
+- exploration and execution require different governance;
+- professional augmentation is the central value;
+- whole-of-organization awareness does not mean universal access or centralized authority;
+- control, observation, evaluation, and authorization must not collapse;
+- the controller is part of the system under test when the claim depends on it; and
+- evidence may propose change, but accountable authority must authorize, version, and record it.
 
-| Document | Description |
-| --- | --- |
-| [Adversarial Review Methodology](validation/adversarial-review-methodology.md) | Summary of the multi-model review process, key findings, and what changed as a result. |
-| [Why One AI Is Not Enough](validation/why-one-ai-is-not-enough.md) | Lessons from multi-model adversarial review of AI system architecture. Methodology, model bias profiles, and the case for heterogeneous review. |
+## Core engineering invariants
 
-The architecture has been stress-tested through structured adversarial review by four independent AI models — Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google), and Copilot (Microsoft). Reviews were conducted independently with identical prompts and no cross-contamination. Findings were reconciled across all reviews, and convergent criticisms drove structural revisions.
+- **The claim determines the boundary.** A model-only claim may justify a narrow item. A consequential organizational claim generally requires a broader socio-technical boundary.
+- **Purpose is not authority.** Technical capability, repeated use, organizational preference, or model inference does not create permission.
+- **Authority is not evidence.** Authorization to act and evidence that action occurred are separate propositions.
+- **Qualification is not authorization.** Engineering establishes what a path has demonstrated; accountable authority may permit less, never more.
+- **Action is not effect.** Recommendation, approval, dispatch, execution, acknowledgment, external effect, and verified effect remain distinct.
+- **No self-certification.** Evaluated components may produce evidence, but no component becomes final authority over evidence used to establish its own correctness.
+- **Missing evidence does not become assumed evidence.** A limitation constrains the claim, authority, assurance mode, or system design.
+- **Learning does not authorize its own conclusions.** Evidence and evaluation may recommend change; governed, versioned authority enacts it.
+- **The as-operated enterprise governs engineering reality.** Architecture diagrams and policies are hypotheses until current evidence shows how work actually occurs.
 
-The most significant convergent finding: all four reviewers independently identified that the original core principle created a structural tension with what the architecture actually does. This drove the reframe to the current principle, replacing a binary framing with a spectrum based on error recoverability.
+## DRNT's place in the architecture
 
-## DRNT Specification Suite
+DRNT is the originating architectural context, first intended realization, and principal technical inheritance. It supplies implementation-facing mechanisms such as route-don't-reason routing, capability-scoped trust, context boundaries, credential and egress gates, bounded execution, durable source-event identity, override semantics, and tamper-evident receipts.
 
-The `specs/` and `governance/` directories contain the DRNT (Don't Reason, Navigate & Task) personal-scale implementation — seven interface specifications and three governance artifacts specified to enforcement depth.
+DRNT does **not** replace the three-volume architecture. The volumes define the organizational governance and assurance problem. DRNT provides one concrete realization path for parts of that architecture.
 
-**Status:** Conformance reference implementation: [local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway) (implements v7.0). The gateway is sized for single-operator validation on commodity hardware — it is the existence proof that this architecture is realizable, not a product. See the gateway's STATUS.md for per-claim conformance status and current test results.
+## Architecture truth versus implementation truth
 
-| Directory | Artifact | Description |
-| --- | --- | --- |
-| `specs/` | [Spec 1: Audit/Event Schema](specs/DRNT_Spec1_Audit_Event_Schema.md) | Single event format for the append-only audit log. 20+ event types, SHA-256 hash chain, fail-closed guarantee. |
-| `specs/` | [Spec 2: Capability Model (WAL → Permissions)](specs/DRNT_Spec2_Capability_Model.md) | Capability registry mapping each WAL level to per-action gate policies. Promotion criteria, demotion triggers. |
-| `specs/` | [Spec 3: Context Boundary Specification](specs/DRNT_Spec3_Context_Boundary.md) | Context Packager data structure, sensitivity classification, four-stage transform pipeline. |
-| `specs/` | [Spec 4: Egress Policy Binding](specs/DRNT_Spec4_Egress_Policy.md) | Egress endpoint registry, 11-step gateway check sequence, Docker network topology enforcement. |
-| `specs/` | [Spec 5: Override Semantics](specs/DRNT_Spec5_Override_Semantics.md) | Four override types, successor job model, conditional demotion separating routing from infrastructure failures. |
-| `specs/` | [Spec 6: Silo Runtime Security](specs/DRNT_Spec6_Silo_Runtime_Security.md) | Three-layer enforcement model for worker agent execution. Skill lifecycle, worker egress proxy. |
-| `specs/` | [Spec 7: Signal Chain Resilience](specs/DRNT_Spec7_Signal_Chain_Resilience.md) | Device failure modes, health probe hysteresis, stale job recovery, offline decision replay, WAL temporal decay. |
-| — | Spec 8: Managed Build Workflow | Gateway-only process spec — governs build discipline for the conformance reference. Lives in the gateway repo. |
-| `governance/` | [Event Schema v2.0](governance/DRNT_Event_Schema.md) | Complete field-level reference for all event types. Companion to Spec 1. |
-| `governance/` | [Capability Trust Profile](governance/DRNT_Capability_Trust_Profile.md) | Trust lifecycle: ring buffer mechanics, promotion criteria, demotion rules. Companion to Spec 2. |
-| `governance/` | [NemoClaw Governance Overlay](governance/DRNT_NemoClaw_Governance_Overlay.md) | Maps DRNT governance to NVIDIA's NemoClaw/OpenShell ecosystem. |
+This repository controls architecture and specification. It does not prove that every described mechanism is running.
 
-## License
+The separate **[local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway)** repository controls implementation claims for the personal-scale testbed. Its **[STATUS.md](https://github.com/ljefford2-cmyk/local-first-ai-gateway/blob/main/STATUS.md)**, code, tests, receipts, and observed behavior determine what is implemented, partial, or not built.
 
-[MIT](LICENSE)
+The controlling rule is:
+
+> **Governance language must never outrun implementation evidence.**
+
+The publication corpus uses `[P]`, `[S]`, and `[F]` where useful:
+
+- **[P] Demonstrated primitive** — shown runnable at the stated scale; never automatic proof at enterprise scale.
+- **[S] Specified mechanism** — required or designed, but not established as a running component.
+- **[F] Fixture or implementation hypothesis** — synthetic behavior, scaling assumption, or proposed realization under test.
+
+See the **[DRNT Authority Map](docs/architecture/DRNT_Authority_Map.md)** before relying on any implementation statement.
+
+## Repository map
+
+| Path | Purpose |
+|---|---|
+| [`publications/`](publications/) | Controlled volumes, public papers, enterprise doctrine, synthetic fixture, and repository text transcriptions grounded in the supplied source artifacts. |
+| [`docs/architecture/`](docs/architecture/) | Authority map, three-volume overview, and implementation-facing system maps. |
+| [`specs/`](specs/) | DRNT interface and control specifications. |
+| [`governance/`](governance/) | Event, trust, sandbox, and governance overlays. |
+| [`validation/`](validation/) | Adversarial review methods and validation material. |
+| [`docs/adr/`](docs/adr/) | Architectural decision records. |
+| [`docs/legacy/`](docs/legacy/) | Reading guidance for earlier repository materials that remain historically useful but no longer control the corpus. |
+
+## What this repository does not claim
+
+It does not claim a complete commercial product, enterprise deployment, federal deployment, universal visibility, perfect independence, prevention of every failure, universal preventive intervention, perfect reconstruction, zero residual risk, maximum automation, or replacement of professional judgment and accountable institutional authority.
+
+The objective is not an autonomous organization. It is an organization capable of seeing itself more accurately, acting within valid authority, challenging its assumptions, verifying real effects, learning from operational evidence, and improving without surrendering final authority over its own correctness to any single person, department, vendor, model, agent, controller, evaluator, or authorization seat.
+
+## License and publication rights
+
+Repository code and technical specification material are licensed under the [MIT License](LICENSE) except where a file states otherwise. Separately authored manuscripts in `publications/` are governed by the **[Publication Rights Notice](publications/LICENSE-NOTICE.md)** and any terms stated in the individual artifact.
 
 ## Author
 
-Lawrence Jeffords — Nahunta, Georgia
-
-Architecture developed and validated March 2026 through multi-model adversarial review.
+**Lawrence Jeffords — End-User and Operator**
