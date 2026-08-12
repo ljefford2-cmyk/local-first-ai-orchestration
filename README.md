@@ -94,6 +94,19 @@ See the **[DRNT Authority Map](docs/architecture/DRNT_Authority_Map.md)** before
 | [`docs/adr/`](docs/adr/) | Architectural decision records. |
 | [`docs/legacy/`](docs/legacy/) | Reading guidance for earlier repository materials that remain historically useful but no longer control the corpus. |
 
+## Project portfolio
+
+This repository is the architectural authority and principal design corpus. Related repositories have narrower roles and do not independently redefine the architecture:
+
+| Repository | Role | Evidence boundary |
+|---|---|---|
+| [`local-first-ai-gateway`](https://github.com/ljefford2-cmyk/local-first-ai-gateway) | Personal-scale implementation and testbed for selected DRNT primitives. | Its code, tests, receipts, observed behavior, and current `STATUS.md` control only what the personal testbed demonstrates. |
+| `drnt-federal-track-frozen` | Private federal-scale synthetic testbed with immutable accepted baselines, harnesses, findings, and design inputs. | Frozen artifacts and ledgered synthetic results stress the architecture; they do not prove deployment, compliance, or enterprise-scale implementation. |
+| `drnt_domain_fixtures_private` | Private domain testbed applying the concepts to a small plantation, hunting, lodging, and event operation using mobile interfaces. | Domain fixtures and traces remain personal-scale, context-specific, and subject to their stated source and evidence limitations. |
+| [`Local-AI-Orchestrator`](https://github.com/ljefford2-cmyk/Local-AI-Orchestrator) | Historical precursor and NemoClaw/OpenShell governance outreach. | Preserves design history; it is not a current specification or implementation source. |
+
+The relationship is deliberate: this repository defines the architecture; the gateway tests selected primitives at personal scale; the federal and domain repositories challenge or apply the design in bounded fixtures; and the historical repository preserves the path that exposed the need for specialist security and sandboxing support.
+
 ## What this repository does not claim
 
 It does not claim a complete commercial product, enterprise deployment, federal deployment, universal visibility, perfect independence, prevention of every failure, universal preventive intervention, perfect reconstruction, zero residual risk, maximum automation, or replacement of professional judgment and accountable institutional authority.

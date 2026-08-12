@@ -18,7 +18,7 @@ The specification suite consists of seven interface specifications (Specs 1–7)
 
 This document provides a concise technical summary of each artifact. The full specifications are published in the GitHub repository linked above.
 
-**Status:** Conformance reference implementation: [local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway) (implements v7.0). See the gateway's STATUS.md for per-claim conformance status.
+**Implementation status:** [local-first-ai-gateway](https://github.com/ljefford2-cmyk/local-first-ai-gateway) is the personal-scale implementation and testbed. Its current [`STATUS.md`](https://github.com/ljefford2-cmyk/local-first-ai-gateway/blob/main/STATUS.md), code, tests, receipts, and observed behavior—not this overview—control what has been demonstrated, remains partial, or is not built.
 
 ## The Specification Suite
 
