@@ -15,6 +15,27 @@ This manifest records the corpus artifacts incorporated into the August 2026 rep
 | The Enterprise Under Test | Final enterprise doctrine paper — Version 3 — July 2026 | [`Markdown`](enterprise-doctrine/The_Enterprise_Under_Test_Final_Doctrine_v3.md) | `Enterprise_DRNT_Signed_Off_Final_July_2026(4).docx` | `3574864c703ed76791c0f7db1be1423f7e92694471a281767c13e91d6a30443d` | 218.8 KiB |
 | Federal-Scale Orchestration Test Fixture | A DRNT Methods Test Fixture — Version 1.2 — July 2026 | [`Markdown`](fixtures/Federal_Scale_Orchestration_Test_Fixture_v1.2.md) | `Federal Scale Orchestration Test Fixture v1 2(2).docx` | `492fd85b92ab513225d36eab3cc8fce2c2a37631b046686bcb61f8efa2d0016a` | 60.3 KiB |
 
+## Recovered source authorities (registered 2026-08-22 — non-controlling)
+
+These four artifacts are the Volume 1 / Volume 3 cited drafting authorities (Engineering Design Bases and FINAL Controlled Structural Outlines), recovered from the project library's authoring workspace and registered as **recovered source authorities**. They are not members of the five-item controlling hierarchy (Plan, Volumes 1–3, and the hierarchy declarations), and this registration does not add to that hierarchy. Full registration records, including internal status language, version discrimination against recovered predecessor versions, and the identification basis, are in [`recovered-source-authorities/README.md`](recovered-source-authorities/README.md).
+
+**Shared provenance qualification:** each entry is a recovered candidate for the document the manuscript cites, identified by internal status language and content correspondence with the Final Controlled Manuscript. No contemporaneous hash or other byte-level binding between the manuscript citations and these recovered files was available; historical byte identity as the cited sources therefore cannot be independently established.
+
+| Artifact | Role cited by | Source DOCX | SHA-256 | Size |
+|---|---|---|---|---:|
+| Volume 1 Engineering Design Basis | Vol 1 Source Note | `Volume_1_Define_Reality_Engineering_Design_Basis.docx` | `750e2dc9cceab38dd9bcaa9a9e686bd02f9477e5c4e87bc97fb79b5afd648f76` | 44.1 KiB |
+| Volume 1 FINAL Controlled Structural Outline | Vol 1 Source Note | `Volume_1_Define_Reality_Complete_Controlled_Structural_Outline_FINAL.docx` | `0681b90687a1291cd345a00fb4e1b7023f3513bc545e9ee2c5a1b1947fe15aef` | 45.1 KiB |
+| Volume 3 Corrected Engineering Design Basis | Vol 3 Source Note | `Volume_3_Connect_Reality_Corrected_Engineering_Design_Basis.docx` | `08bc989196134e244293289ffa969933a14aee14636aba7de391df40c16b0b81` | 44.8 KiB |
+| Volume 3 FINAL Controlled Structural Outline | Vol 3 Source Note | `Volume_3_Complete_Controlled_Structural_Outline_FINAL.docx` | `db5feedc484cbbe0e1450ce36e15118541d267fe6e331b2515923960c0590488` | 50.0 KiB |
+
+## Non-controlling supporting material (registered 2026-08-22)
+
+| Artifact | Status | Frozen publication artifact | SHA-256 | Size |
+|---|---|---|---|---:|
+| Govern From Known Reality Outward — A Brownfield Transition Method for AI-Mediated Enterprise Operations | Non-controlling supporting material — frozen publication artifact is the final PDF | `Govern From Known Reality Outward Merged.pdf` (21 pages, project library) | `a10528281c0e628be4c430fddd33ae2eaab6a385a0024e6b89e6744e142adc43` | 94.4 KiB |
+
+Volumes 1–3 remain controlling; the paper applies the architecture to brownfield transition and states its own subordination (§3). The PDF alone is the registered frozen publication artifact; any later editable representation must be separately identified as a DERIVED representation with its own hash and independently checked correspondence. Full registration record: [`docs/provenance/2026-08-22-brownfield-transition-paper-registration.md`](../docs/provenance/2026-08-22-brownfield-transition-paper-registration.md).
+
 ## Identity and version notes
 
 - The Federal-Scale Orchestration Test Fixture supplied for this update identifies itself as **Version 1.2**. Some later corpus source notes refer to Version 1.2.1. This repository preserves the supplied artifact's own identity and does not silently reconcile that difference.
