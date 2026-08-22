@@ -11,3 +11,5 @@
 | `ea13874` | Retained privately; disclosure-clean; not tagged — the work entered public history in evolved form via `82b6670` and `47e1b9f` |
 
 `2ee46ed` and `1edda54` together constitute the redaction history of the published Track A closure `d239ef8`. That is why they are retained — they document how the published closure was produced — and why they cannot be published: publishing the redaction history would disclose what the redaction removed.
+
+Publication of `3a8d673` was completed after this disposition record was initially committed; remote retrievability was confirmed through the annotated tag and recorded in the B1.4 manifest at `33ceb43`.
