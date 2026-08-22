@@ -1,2 +1,3 @@
 *.docx binary
 *.png binary
+docs/track-b/method-records/*-canonical-lf.md -text
