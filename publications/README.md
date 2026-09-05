@@ -1,8 +1,10 @@
 # Publications and Controlled Architecture
 
-This directory contains the current public and controlled writing corpus for the DRNT program. It separates the three-volume organizational architecture from implementation-facing technical specifications and from the running personal testbed.
+This directory is the writing corpus for a persistent, human-directed assistant and for the complete-system discipline that makes an assistant this capable dependable.
 
-## Controlling order
+The current forward-facing description of what is being built is **[The Ultimate AI Assistant](enterprise-doctrine/The_Ultimate_AI_Assistant.md)**. The controlled manuscripts in this directory are the engineering basis for that dependability. They do not replace that description, and they are not required reading before it can be understood.
+
+## Controlling order for engineering content
 
 1. [`Project Plan v0.2 — Frozen Architectural Baseline`](controlled-architecture/Project_Plan_v0.2_Frozen_Architectural_Baseline.md) controls corpus-level architecture, terminology, volume allocation, claim states, baseline machinery, and change classification.
 2. [`Volume 1 — Define Reality`](controlled-architecture/Volume_1_Define_Reality_Final_Controlled_Manuscript.md) controls claim, boundary, authority, consequence, measurand, intended-effect, declared-model, and governed-target definition.
@@ -15,14 +17,14 @@ This directory contains the current public and controlled writing corpus for the
 | Directory | Role |
 |---|---|
 | [`controlled-architecture/`](controlled-architecture/) | Frozen Plan and the three Final Controlled Manuscripts. |
-| [`foundation/`](foundation/) | Public conceptual entry point: the agent is not the system. |
+| [`foundation/`](foundation/) | Foundation paper: the agent is not the system. Inheritance, not the public front door. |
 | [`supporting-papers/`](supporting-papers/) | Engineering foundations and discussion papers supporting the controlled volumes. |
-| [`enterprise-doctrine/`](enterprise-doctrine/) | Enterprise DRNT and seat-layer doctrine. |
+| [`enterprise-doctrine/`](enterprise-doctrine/) | Forward-facing assistant description, plus earlier enterprise and seat-layer doctrine. |
 | [`fixtures/`](fixtures/) | Synthetic stress fixtures. These are not deployment proposals or proof of implementation. |
 
 The [`Publication Manifest`](MANIFEST.md) records source identities, statuses, hashes, and known naming/version notes.
 
-For a conceptual reading path from the earlier local-orchestrator framing through the supporting papers and into the controlled volumes, see the [Design Evolution Reading Guide](../docs/history/design-evolution.md).
+Lineage from the earlier local-orchestrator framing is recorded in the [Design Evolution Reading Guide](../docs/history/design-evolution.md). It describes history. It is not required reading.
 
 ## Reading discipline
 
