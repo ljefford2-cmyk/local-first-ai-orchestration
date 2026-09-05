@@ -1,12 +1,14 @@
 # Repository Purpose
 
-This repository develops and preserves a governance architecture for organizations whose consequential work is increasingly mediated by AI models, agents, controllers, software, human decision-makers, legacy systems, external services, and physical processes.
+**Make the institution more capable by making its people more capable.**
 
-Its purpose is:
+This repository develops and preserves the architecture for a persistent, human-directed assistant, and for the complete-system discipline that makes an assistant this capable dependable.
 
-> **Create a governance framework that enables diverse AI systems to operate together in a more useful, trustworthy, and accountable manner.**
+The assistant is the goal. Complete-system governance is what makes that ambition dependable.
 
-It is not a chatbot project, an autonomous-agent platform, a claim that one product governs an enterprise, or a replacement for professional judgment. It is the architecture for defining what the organization claims, determining what authority applies, connecting those requirements to the enterprise that actually exists, independently evaluating what the evidence supports, and changing the organization only through accountable, versioned governance.
+It is not a chatbot project, an autonomous-agent platform, a claim that one implementation governs an enterprise, or a replacement for professional judgment. It is the architecture for that assistant: how work is defined and authorized, how results are independently evaluated, how the assistant reaches the enterprise that actually exists, and how the organization learns without allowing accumulated evidence to become its own authority.
+
+The four engineering functions below remain the means by which the assistant becomes dependable. They are not a replacement for the assistant.
 
 ## The governed object
 

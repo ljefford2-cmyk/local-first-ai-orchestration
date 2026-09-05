@@ -1,18 +1,18 @@
-# Governed AI Orchestration
+# The Ultimate AI Assistant
 
-**Define reality. Evaluate reality. Connect reality.**
+**Make the institution more capable by making its people more capable.**
 
-This repository is the architecture, governance, and publication corpus for DRNT — **Don't Reason, Navigate & Task** — and the broader three-volume architecture for governed AI-mediated organizations.
+This repository contains the architecture, specifications, and supporting documentation for that assistant and for the complete-system discipline that makes it dependable.
 
-The central premise is simple:
+The assistant is a persistent, human-directed combination of intelligence, knowledge, tools, and institutional capability. It helps people think, learn, investigate, plan, coordinate, and carry work through to a result they can stand behind—not merely answer questions. At organizational scale, it makes the institution reachable to the person doing the work without placing a machine above them.
 
-> **The AI agent is not the organizational system.**
+The assistant is the goal. Complete-system governance is what makes an assistant this capable dependable.
 
-A model or agent can complete its assigned task correctly while the organization still fails because the wrong information was used, authority was invalid, a control was bypassed, the action reached the wrong target, the intended external effect did not occur, or the available evidence cannot independently establish what happened.
+DRNT—Don’t Reason, Navigate & Task—is the orchestration and control architecture for that assistant. The three-volume engineering corpus defines the complete-system discipline required to govern its operation.
 
-The governed object is therefore the **claim-relevant organizational system**: the people, authority, information, controls, workflows, models, agents, software, legacy systems, credentials, physical processes, external dependencies, effects, evidence, evaluators, and change mechanisms needed to support the exact claim being made.
+---
 
-## Current controlled architecture
+## Engineering corpus
 
 The August 2026 corpus is governed in this order:
 
@@ -33,9 +33,13 @@ The complete publication set, source identities, hashes, and version notes are r
 
 These volume numbers are **not** the same thing as DRNT's implementation-layer labels. Volume 1 is not the L1 router; Volume 2 is not merely an L2 model; and Volume 3 is not a roaming-agent layer. See the **[Three-Volume Architecture Overview](docs/architecture/Three_Volume_Architecture_Overview.md)**.
 
-## Public entry point
+## Documentation
 
-**[AI Orchestration Governance: The Agent Is Not the System](publications/foundation/AI_Orchestration_Governance_The_Agent_Is_Not_The_System.md)** is the public conceptual entry point. It explains the practical proposition behind the controlled volumes:
+The current forward-facing description of what is being built is **[The Ultimate AI Assistant](publications/enterprise-doctrine/The_Ultimate_AI_Assistant.md)**.
+
+The three-volume manuscripts are the engineering basis for dependability. They do not replace that description.
+
+**[AI Orchestration Governance: The Agent Is Not the System](publications/foundation/AI_Orchestration_Governance_The_Agent_Is_Not_The_System.md)** remains in the corpus as a foundation paper. It explains:
 
 - automation is supporting machinery, not the mission;
 - exploration and execution require different governance;
